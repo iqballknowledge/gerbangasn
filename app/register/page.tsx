@@ -1,20 +1,85 @@
 "use client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
-import { GraduationCap, Eye, EyeOff, ArrowRight, Mail, Lock, User, MapPin, CheckCircle } from "lucide-react";
+import { GraduationCap, Eye, EyeOff, ArrowRight, Mail, Lock, User, CheckCircle } from "lucide-react";
+import RegionCombobox from "@/components/RegionCombobox";
 
-const cities = ["Jakarta", "Surabaya", "Bandung", "Medan", "Yogyakarta", "Semarang", "Makassar", "Palembang", "Tangerang", "Depok", "Bekasi", "Malang", "Lainnya"];
+/**
+ * Register Page — GerbangASN
+ *
+ * Perubahan pada revisi ini (lihat task UX):
+ * - Field "Target Nilai" dihapus total (label, input, state, validasi, submit payload).
+ *   Target skor sekarang dihitung otomatis dari hasil Tryout pertama, bukan diminta di sini.
+ * - Field Kota diganti dari <select> statis ke RegionCombobox (searchable, 514 kab/kota,
+ *   data di lib/regions.ts) — lihat components/RegionCombobox.tsx.
+ * - Validasi inline real-time + pesan error per field.
+ * - Checkbox persetujuan Syarat & Ketentuan wajib dicentang sebelum tombol aktif.
+ * - Desain visual (dark theme, glass card, gradient blob, warna, layout, routing,
+ *   dan alur submit dummy) TIDAK diubah — hanya isi & UX form yang direvisi.
+ */
+
+type FormState = {
+  name: string;
+  email: string;
+  password: string;
+  city: string; // diisi via RegionCombobox, harus persis salah satu value di lib/regions.ts
+};
+
+type TouchedState = Partial<Record<keyof FormState, boolean>>;
+
+function validate(form: FormState) {
+  const errors: Partial<Record<keyof FormState, string>> = {};
+
+  if (!form.name.trim()) {
+    errors.name = "Nama lengkap wajib diisi.";
+  } else if (form.name.trim().length < 3) {
+    errors.name = "Nama minimal 3 karakter.";
+  }
+
+  if (!form.email.trim()) {
+    errors.email = "Email wajib diisi.";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    errors.email = "Format email tidak valid.";
+  }
+
+  if (!form.password) {
+    errors.password = "Password wajib diisi.";
+  } else if (form.password.length < 8) {
+    errors.password = "Password minimal 8 karakter.";
+  }
+
+  if (!form.city) {
+    errors.city = "Pilih kota/kabupaten dari daftar.";
+  }
+
+  return errors;
+}
 
 export default function RegisterPage() {
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState<"form" | "success">("form");
-  const [form, setForm] = useState({ name: "", email: "", password: "", city: "", target: "510" });
+  const [agreed, setAgreed] = useState(false);
+  const [touched, setTouched] = useState<TouchedState>({});
+  const [form, setForm] = useState<FormState>({ name: "", email: "", password: "", city: "" });
+
+  const errors = useMemo(() => validate(form), [form]);
+  const isValid = Object.keys(errors).length === 0 && agreed;
+
+  function markTouched(field: keyof FormState) {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setTouched({ name: true, email: true, password: true, city: true });
+    if (!isValid) return;
+
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1200));
+    // NOTE: alur submit sengaja tetap dummy (tidak menyentuh Supabase/API) sesuai
+    // instruksi task ini. Payload yang dikirim sudah TIDAK menyertakan target_score —
+    // kolom itu punya default di database (lihat supabase/schema.sql) sehingga aman.
+    await new Promise((r) => setTimeout(r, 1200));
     setLoading(false);
     setStep("success");
   };
@@ -57,75 +122,189 @@ export default function RegisterPage() {
         </div>
 
         <div className="glass-bright" style={{ borderRadius: 20, padding: 32 }}>
-          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            {/* Nama Lengkap */}
             <div>
-              <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", marginBottom: 8 }}>Nama Lengkap</label>
+              <label htmlFor="name" style={{ display: "block", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", marginBottom: 8 }}>
+                Nama Lengkap
+              </label>
               <div style={{ position: "relative" }}>
                 <User size={16} color="var(--text-muted)" style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)" }} />
-                <input type="text" required className="input-field" style={{ paddingLeft: 42 }}
-                  placeholder="Nama sesuai KTP" value={form.name}
-                  onChange={e => setForm({ ...form, name: e.target.value })} />
+                <input
+                  id="name"
+                  type="text"
+                  required
+                  aria-required="true"
+                  aria-invalid={touched.name && !!errors.name}
+                  aria-describedby={touched.name && errors.name ? "name-error" : undefined}
+                  className="input-field"
+                  style={{ paddingLeft: 42, borderColor: touched.name && errors.name ? "var(--danger)" : undefined }}
+                  placeholder="Nama sesuai KTP"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  onBlur={() => markTouched("name")}
+                />
               </div>
+              {touched.name && errors.name && (
+                <p id="name-error" role="alert" style={{ marginTop: 6, fontSize: 12.5, color: "var(--danger)" }}>
+                  {errors.name}
+                </p>
+              )}
             </div>
+
+            {/* Email */}
             <div>
-              <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", marginBottom: 8 }}>Email</label>
+              <label htmlFor="email" style={{ display: "block", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", marginBottom: 8 }}>
+                Email
+              </label>
               <div style={{ position: "relative" }}>
                 <Mail size={16} color="var(--text-muted)" style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)" }} />
-                <input type="email" required className="input-field" style={{ paddingLeft: 42 }}
-                  placeholder="nama@email.com" value={form.email}
-                  onChange={e => setForm({ ...form, email: e.target.value })} />
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  aria-required="true"
+                  aria-invalid={touched.email && !!errors.email}
+                  aria-describedby={touched.email && errors.email ? "email-error" : undefined}
+                  className="input-field"
+                  style={{ paddingLeft: 42, borderColor: touched.email && errors.email ? "var(--danger)" : undefined }}
+                  placeholder="nama@email.com"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  onBlur={() => markTouched("email")}
+                />
               </div>
+              {touched.email && errors.email && (
+                <p id="email-error" role="alert" style={{ marginTop: 6, fontSize: 12.5, color: "var(--danger)" }}>
+                  {errors.email}
+                </p>
+              )}
             </div>
+
+            {/* Password */}
             <div>
-              <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", marginBottom: 8 }}>Password</label>
+              <label htmlFor="password" style={{ display: "block", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", marginBottom: 8 }}>
+                Password
+              </label>
               <div style={{ position: "relative" }}>
                 <Lock size={16} color="var(--text-muted)" style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)" }} />
-                <input type={showPass ? "text" : "password"} required className="input-field"
-                  style={{ paddingLeft: 42, paddingRight: 42 }}
-                  placeholder="Min. 8 karakter" value={form.password}
-                  onChange={e => setForm({ ...form, password: e.target.value })} />
-                <button type="button" onClick={() => setShowPass(!showPass)}
-                  style={{ position: "absolute", right: 14, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", cursor: "pointer", color: "var(--text-muted)" }}>
+                <input
+                  id="password"
+                  type={showPass ? "text" : "password"}
+                  required
+                  aria-required="true"
+                  aria-invalid={touched.password && !!errors.password}
+                  aria-describedby={touched.password && errors.password ? "password-error" : undefined}
+                  className="input-field"
+                  style={{ paddingLeft: 42, paddingRight: 42, borderColor: touched.password && errors.password ? "var(--danger)" : undefined }}
+                  placeholder="Min. 8 karakter"
+                  value={form.password}
+                  onChange={(e) => setForm({ ...form, password: e.target.value })}
+                  onBlur={() => markTouched("password")}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPass(!showPass)}
+                  aria-label={showPass ? "Sembunyikan password" : "Tampilkan password"}
+                  aria-pressed={showPass}
+                  style={{ position: "absolute", right: 14, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", cursor: "pointer", color: "var(--text-muted)" }}
+                >
                   {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", marginBottom: 8 }}>
-                  <MapPin size={12} style={{ display: "inline", marginRight: 4 }} />Kota
-                </label>
-                <select className="input-field" value={form.city}
-                  onChange={e => setForm({ ...form, city: e.target.value })}
-                  style={{ appearance: "none" }}>
-                  <option value="">Pilih kota</option>
-                  {cities.map(c => <option key={c} value={c}>{c}</option>)}
-                </select>
-              </div>
-              <div>
-                <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", marginBottom: 8 }}>Target Nilai</label>
-                <input type="number" min="430" max="550" className="input-field"
-                  placeholder="510" value={form.target}
-                  onChange={e => setForm({ ...form, target: e.target.value })} />
-              </div>
+              {touched.password && errors.password && (
+                <p id="password-error" role="alert" style={{ marginTop: 6, fontSize: 12.5, color: "var(--danger)" }}>
+                  {errors.password}
+                </p>
+              )}
             </div>
 
-            <button type="submit" className="btn-primary"
-              style={{ fontSize: 15, padding: "13px", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 4 }}
-              disabled={loading}>
+            {/* Kota / Kabupaten — searchable combobox, wajib pilih dari daftar */}
+            <div>
+              <RegionCombobox
+                id="city"
+                label="Kota / Kabupaten"
+                required
+                value={form.city}
+                onChange={(value) => setForm({ ...form, city: value })}
+                onBlurValidate={() => markTouched("city")}
+                error={touched.city ? errors.city : undefined}
+              />
+              {touched.city && errors.city && (
+                <p role="alert" style={{ marginTop: 6, fontSize: 12.5, color: "var(--danger)" }}>
+                  {errors.city}
+                </p>
+              )}
+            </div>
+
+            {/* Persetujuan Syarat & Ketentuan */}
+            <label
+              htmlFor="agree-terms"
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: 10,
+                fontSize: 13,
+                color: "var(--text-secondary)",
+                lineHeight: 1.5,
+                cursor: "pointer",
+              }}
+            >
+              <input
+                id="agree-terms"
+                type="checkbox"
+                checked={agreed}
+                onChange={(e) => setAgreed(e.target.checked)}
+                style={{ marginTop: 2, width: 16, height: 16, accentColor: "var(--accent-primary)", cursor: "pointer", flexShrink: 0 }}
+              />
+              <span>
+                Saya menyetujui{" "}
+                <Link href="/terms" style={{ color: "#60A5FA", textDecoration: "none" }}>
+                  Syarat &amp; Ketentuan
+                </Link>{" "}
+                serta{" "}
+                <Link href="/privacy" style={{ color: "#60A5FA", textDecoration: "none" }}>
+                  Kebijakan Privasi
+                </Link>
+                .
+              </span>
+            </label>
+
+            <button
+              type="submit"
+              className="btn-primary"
+              style={{
+                fontSize: 15,
+                padding: "13px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 8,
+                marginTop: 4,
+                opacity: loading || !isValid ? 0.5 : 1,
+                cursor: loading || !isValid ? "not-allowed" : "pointer",
+                pointerEvents: loading ? "none" : "auto",
+              }}
+              disabled={loading || !isValid}
+              aria-disabled={loading || !isValid}
+            >
               {loading ? (
                 <div style={{ width: 18, height: 18, border: "2px solid white", borderTopColor: "transparent", borderRadius: "50%", animation: "spin 0.8s linear infinite" }} />
-              ) : <><span>Buat Akun Gratis</span><ArrowRight size={16} /></>}
+              ) : (
+                <>
+                  <span>Daftar Gratis</span>
+                  <ArrowRight size={16} />
+                </>
+              )}
             </button>
           </form>
 
           <div style={{ textAlign: "center", marginTop: 20, fontSize: 14, color: "var(--text-secondary)" }}>
             Sudah punya akun?{" "}
-            <Link href="/login" style={{ color: "#60A5FA", fontWeight: 600, textDecoration: "none" }}>Masuk</Link>
+            <Link href="/login" style={{ color: "#60A5FA", fontWeight: 600, textDecoration: "none" }}>
+              Masuk
+            </Link>
           </div>
-          <p style={{ textAlign: "center", fontSize: 11, color: "var(--text-muted)", marginTop: 12 }}>
-            Dengan mendaftar, Anda menyetujui Syarat & Ketentuan dan Kebijakan Privasi GerbangASN.
-          </p>
         </div>
       </div>
       <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
