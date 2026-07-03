@@ -101,3 +101,69 @@ Implementasi bela negara dapat dilakukan melalui:
 - pengembangan ilmu pengetahuan;
 - mitigasi bencana;
 - menjaga persatuan dan kesatuan bangsa.
+
+# 4. Key Points
+
+- Bela negara merupakan hak sekaligus kewajiban setiap warga negara.
+- Bela negara tidak identik dengan perang atau menjadi anggota TNI.
+- Implementasi bela negara dapat dilakukan sesuai profesi dan kapasitas masing-masing.
+- Nilai bela negara meliputi cinta tanah air, kesadaran berbangsa dan bernegara, keyakinan pada Pancasila, rela berkorban, dan kemampuan awal bela negara.
+- Soal CPNS modern lebih banyak menguji implementasi daripada definisi.
+- Konteks soal umumnya berkaitan dengan kehidupan bermasyarakat, pelayanan publik, pendidikan, atau ruang digital.
+
+# 5. Practical Implementation
+
+## Individu
+
+- Mematuhi hukum.
+- Membayar pajak.
+- Menjaga nama baik bangsa.
+
+## ASN
+
+- Memberikan pelayanan publik yang profesional.
+- Menolak gratifikasi.
+- Menjaga netralitas ASN.
+
+## Mahasiswa
+
+- Belajar dengan sungguh-sungguh.
+- Menjaga persatuan di lingkungan kampus.
+- Mengembangkan inovasi.
+
+## Dunia Digital
+
+- Tidak menyebarkan hoaks.
+- Menjaga keamanan data pribadi.
+- Menggunakan media sosial secara bertanggung jawab.
+
+## Masyarakat
+
+- Gotong royong.
+- Menjaga toleransi.
+- Membantu korban bencana.
+
+## Dunia Kerja
+
+- Bekerja profesional.
+- Menjaga aset negara.
+- Menolak korupsi.
+
+# 6. Current Issues
+
+Fenomena berikut dapat digunakan sebagai konteks soal:
+
+- Penyebaran hoaks di media sosial.
+- Ancaman keamanan siber.
+- Perlindungan data pribadi.
+- Ketahanan pangan nasional.
+- Penanggulangan bencana.
+- Transformasi digital pelayanan publik.
+- Toleransi dan kerukunan antarumat beragama.
+- Pencegahan radikalisme dan ekstremisme.
+
+| Kompetensi                    | Indikator                                         | Bentuk Soal       |
+| ----------------------------- | ------------------------------------------------- | ----------------- |
+| Mengidentifikasi implementasi | Menentukan tindakan yang mencerminkan bela negara | Studi kasus       |
+| Analisis                      | Memilih tindakan terbaik                          | Pilihan ganda     |
+| Evaluasi                      | Menilai tindakan tokoh                            | Kasus kontekstual |
