@@ -1,0 +1,19 @@
+ai/
+│
+├── 00-rules/
+│     gerbangasn-rules.md
+│
+├── 01-templates/
+│     README.md
+│
+├── 02-knowledge/
+│     README.md
+│
+├── 03-prompts/
+│     README.md
+│
+├── 04-generated/
+│     .gitkeep
+│
+└── 05-approved/
+      .gitkeep
