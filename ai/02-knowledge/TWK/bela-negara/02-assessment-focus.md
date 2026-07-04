@@ -35,3 +35,13 @@ Definisi
 ★☆☆☆☆
 
 Pasal
+
+## Tren CPNS
+
+2024-2025
+
+Dominan implementasi.
+
+Sangat sedikit definisi.
+
+Tidak ada hafalan pasal secara langsung.
