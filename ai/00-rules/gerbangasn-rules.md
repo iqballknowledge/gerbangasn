@@ -1,6 +1,6 @@
 # GerbangASN Rules
 
-Version : 1.0
+Version : 2.0
 
 Status : Active
 
@@ -12,7 +12,7 @@ Last Updated : July 2026
 
 GerbangASN bertujuan menjadi platform persiapan seleksi ASN yang menyediakan bank soal berkualitas tinggi, akurat, relevan, dan terus berkembang mengikuti karakter seleksi resmi.
 
-Seluruh soal yang dipublikasikan harus membantu peserta memahami kompetensi yang diukur, bukan sekadar menghafal materi.
+GerbangASN tidak hanya membangun bank soal, tetapi juga membangun Assessment Engine yang mampu menghasilkan soal berkualitas secara konsisten.
 
 ---
 
@@ -23,14 +23,16 @@ Dalam setiap proses penyusunan soal, GerbangASN berkomitmen untuk:
 - Mengutamakan kualitas dibanding kuantitas.
 - Menghasilkan soal yang orisinal.
 - Menggunakan referensi resmi sebagai dasar materi.
-- Menyusun soal yang mampu mengukur kompetensi peserta secara objektif.
-- Melakukan proses review sebelum soal dipublikasikan.
+- Mengukur kompetensi peserta, bukan sekadar hafalan.
+- Mengembangkan soal berdasarkan karakter CAT BKN terbaru.
+- Melakukan review terhadap seluruh soal sebelum dipublikasikan.
+- Melakukan perbaikan berkelanjutan melalui evaluasi internal.
 
 ---
 
 # 3. Core Values
 
-Seluruh proses pengembangan bank soal GerbangASN harus mengikuti nilai berikut.
+Seluruh proses pengembangan GerbangASN harus mengikuti nilai berikut.
 
 ## Official
 
@@ -38,7 +40,7 @@ Materi mengacu pada regulasi dan referensi resmi yang berlaku.
 
 ## Accurate
 
-Isi soal dan pembahasan harus benar secara akademik maupun hukum.
+Seluruh materi, jawaban, dan pembahasan harus benar secara akademik maupun hukum.
 
 ## Objective
 
@@ -50,7 +52,7 @@ Seluruh soal merupakan karya orisinal GerbangASN.
 
 ## Consistent
 
-Standar kualitas harus sama pada seluruh kategori soal.
+Standar kualitas berlaku sama untuk seluruh kategori soal.
 
 ## Educational
 
@@ -58,7 +60,7 @@ Setiap soal harus memberikan nilai pembelajaran melalui pembahasannya.
 
 ---
 
-# 4. Question Philosophy
+# 4. Assessment Philosophy
 
 GerbangASN percaya bahwa soal yang baik tidak hanya mengukur kemampuan mengingat.
 
@@ -70,112 +72,27 @@ Soal harus mampu mengukur:
 - kemampuan mengambil keputusan
 - kemampuan menerapkan konsep pada situasi nyata
 
----
+## Read Easy, Think Hard
 
-# 5. Quality Standards
+GerbangASN tidak bertujuan membuat soal yang sulit dipahami.
 
-Seluruh soal harus memenuhi standar berikut.
+Kesulitan soal harus berasal dari proses berpikir peserta dalam memilih jawaban yang paling tepat.
 
-- menggunakan bahasa Indonesia yang baik dan benar
-- mudah dipahami
-- tidak ambigu
-- memiliki satu jawaban paling tepat
-- sesuai kompetensi yang diukur
-- memiliki pembahasan
-- telah melalui proses review
+Bukan berasal dari cerita yang panjang ataupun rumit.
+
+Prinsip utama:
+
+> "Jangan mempersulit membaca soal. Persulit memilih jawabannya."
 
 ---
 
-# 6. Source Policy
+# 5. Assessment Standards
 
-Referensi resmi menjadi sumber utama penyusunan materi.
+Seluruh soal harus mengikuti standar berikut.
 
-Contoh:
+## Assessment First
 
-- Undang-Undang
-- Peraturan Pemerintah
-- Peraturan Presiden
-- Peraturan Menteri
-- KepmenPANRB
-- BKN
-- Instansi Pemerintah
-
-Referensi non-resmi dapat digunakan untuk mempelajari karakter soal, tetapi bukan sebagai sumber utama materi.
-
----
-
-# 7. AI Usage Policy
-
-Artificial Intelligence digunakan sebagai alat bantu dalam proses penyusunan soal.
-
-AI tidak menggantikan proses validasi oleh reviewer GerbangASN.
-
-Seluruh hasil AI harus melalui proses review sebelum dipublikasikan.
-
----
-
-# 8. Review Policy
-
-Seluruh soal mengikuti alur berikut.
-
-Knowledge
-
-↓
-
-Question Generation
-
-↓
-
-Internal Review
-
-↓
-
-Revision
-
-↓
-
-Approval
-
-↓
-
-Database
-
-Tidak ada soal yang dipublikasikan tanpa proses review.
-
----
-
-# 9. Database Policy
-
-Database produksi hanya berisi soal yang telah berstatus APPROVED.
-
-Draft soal tetap disimpan sebagai arsip pengembangan dan evaluasi.
-
----
-
-# 10. Continuous Improvement
-
-GerbangASN merupakan bank soal yang terus berkembang.
-
-Soal dapat diperbarui apabila terdapat:
-
-- perubahan regulasi
-- perubahan karakter seleksi
-- kesalahan materi
-- kesalahan bahasa
-- hasil evaluasi internal
-- masukan dari pengguna
-
----
-
-# 11. Guiding Principle
-
-Quality over Quantity.
-
-Lebih baik memiliki sedikit soal yang berkualitas tinggi daripada ribuan soal yang tidak tervalidasi.
-
-# Assessment First Principle
-
-Dalam proses pengembangan soal, GerbangASN selalu menggunakan urutan berikut.
+Penyusunan soal selalu dimulai dari:
 
 Kompetensi
 
@@ -199,8 +116,254 @@ Soal
 
 Pembahasan
 
-Bukan sebaliknya.
+Bukan dimulai dari ide soal.
 
-GerbangASN tidak membuat soal terlebih dahulu kemudian mencari materi yang sesuai.
+---
 
-Setiap soal harus berasal dari kompetensi yang jelas dan dapat dipertanggungjawabkan.
+## Competency Based
+
+Setiap soal harus mengukur kompetensi tertentu.
+
+Bukan sekadar menguji hafalan.
+
+---
+
+## Context Based
+
+Konteks digunakan untuk membantu peserta menerapkan konsep.
+
+Bukan untuk memperumit soal.
+
+---
+
+## Best Decision Principle
+
+Pada soal implementasi,
+
+seluruh opsi dapat terlihat benar.
+
+Namun hanya ada satu opsi yang paling tepat berdasarkan:
+
+- legalitas
+- etika
+- prosedur
+- kewenangan
+- efektivitas
+- dampak
+- kelengkapan solusi
+
+---
+
+## Option Based Difficulty
+
+Kesulitan utama soal harus berasal dari kualitas opsi jawaban.
+
+Bukan dari panjang cerita.
+
+---
+
+# 6. Question Standards
+
+Seluruh soal wajib memenuhi standar berikut.
+
+- menggunakan bahasa Indonesia yang baik dan benar
+- mudah dipahami
+- tidak ambigu
+- stem jelas dan fokus
+- konteks realistis
+- hanya memiliki satu konflik utama
+- tidak menggunakan informasi yang tidak relevan
+- memiliki lima opsi yang sama-sama layak dipilih
+- hanya memiliki satu jawaban paling tepat
+- sesuai kompetensi yang diukur
+- memiliki pembahasan
+- telah melalui proses review
+
+---
+
+# 7. Source Policy
+
+Referensi resmi menjadi sumber utama penyusunan materi.
+
+Contoh:
+
+- UUD Negara Republik Indonesia Tahun 1945
+- Undang-Undang
+- Peraturan Pemerintah
+- Peraturan Presiden
+- Peraturan Menteri
+- KepmenPANRB
+- BKN
+- Instansi Pemerintah
+
+Referensi non-resmi seperti buku latihan, field report, maupun soal tryout digunakan untuk mempelajari karakter asesmen, bukan sebagai dasar materi.
+
+---
+
+# 8. AI Usage Policy
+
+Artificial Intelligence digunakan sebagai alat bantu dalam proses pengembangan soal.
+
+AI digunakan untuk:
+
+- membantu menyusun materi
+- membantu menghasilkan soal
+- membantu menghasilkan pembahasan
+- membantu melakukan evaluasi awal
+
+AI tidak menggantikan proses validasi manusia.
+
+Seluruh hasil AI harus memenuhi Assessment Standard GerbangASN sebelum dipublikasikan.
+
+---
+
+# 9. Review Policy
+
+Seluruh soal mengikuti alur berikut.
+
+Knowledge
+
+↓
+
+Question Generation
+
+↓
+
+Internal Review
+
+↓
+
+Revision
+
+↓
+
+Item Analysis
+
+↓
+
+Approval
+
+↓
+
+Database
+
+Tidak ada soal yang dipublikasikan tanpa proses review.
+
+---
+
+# 10. Database Policy
+
+Database produksi hanya berisi soal yang telah berstatus APPROVED.
+
+Draft soal tetap disimpan sebagai arsip pengembangan dan evaluasi.
+
+Seluruh perubahan versi soal harus terdokumentasi.
+
+---
+
+# 11. Continuous Learning
+
+GerbangASN merupakan Assessment Engine yang terus berkembang.
+
+Setiap hasil review harus menghasilkan pembelajaran baru.
+
+Apabila ditemukan pola baru dari:
+
+- soal resmi
+- field report
+- buku referensi
+- evaluasi internal
+- perubahan regulasi
+
+maka pola tersebut harus didokumentasikan pada Knowledge Repository.
+
+Siklus pengembangan GerbangASN:
+
+Generate
+
+↓
+
+Review
+
+↓
+
+Extract Rules
+
+↓
+
+Update Knowledge
+
+↓
+
+Generate Better Questions
+
+---
+
+# 12. Continuous Improvement
+
+Seluruh materi dan soal dapat diperbarui apabila terdapat:
+
+- perubahan regulasi
+- perubahan karakter seleksi
+- kesalahan materi
+- kesalahan bahasa
+- hasil evaluasi internal
+- masukan pengguna
+
+Perubahan dilakukan secara terdokumentasi agar kualitas Assessment Engine terus meningkat.
+
+---
+
+# 13. Guiding Principles
+
+## Quality over Quantity
+
+Lebih baik memiliki sedikit soal berkualitas tinggi daripada ribuan soal yang tidak tervalidasi.
+
+---
+
+## Assessment First
+
+Kompetensi selalu menjadi titik awal penyusunan soal.
+
+---
+
+## Read Easy, Think Hard
+
+Soal harus mudah dipahami.
+
+Yang sulit adalah memilih jawaban.
+
+---
+
+## Best Decision Principle
+
+Dalam soal implementasi,
+
+seluruh opsi harus tampak masuk akal.
+
+Jawaban benar bukan satu-satunya tindakan yang benar,
+
+melainkan tindakan yang paling tepat.
+
+---
+
+## Continuous Learning
+
+Setiap review menghasilkan pengetahuan baru.
+
+Setiap pengetahuan baru harus meningkatkan kualitas Assessment Engine GerbangASN.
+
+---
+
+## Official Before Popular
+
+Karakter soal dapat dipelajari dari berbagai sumber.
+
+Namun materi selalu mengacu pada regulasi dan referensi resmi yang berlaku.
+
+---
+
+## Consistency Matters
+
+Seluruh soal harus memiliki standar kualitas yang konsisten tanpa memandang topik, tingkat kesulitan, maupun jumlah produksi.
