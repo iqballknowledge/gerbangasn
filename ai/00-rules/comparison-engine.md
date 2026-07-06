@@ -1,113 +1,124 @@
----
-title: Comparison Engine
-version: 1.0
-status: Active
-scope: Global
-applies_to:
-  - TWK
----
+# Comparison Engine
 
-# Purpose
+## Tujuan
 
-Dokumen ini mengatur proses membandingkan seluruh opsi sebelum menentukan jawaban terbaik.
+Jawaban benar dipilih melalui proses komparasi terhadap seluruh opsi.
 
-Generator tidak boleh menentukan jawaban benar sebelum seluruh opsi selesai dianalisis.
+Generator tidak boleh menentukan jawaban hanya karena opsi tersebut paling lengkap.
 
 ---
 
-# Prinsip
+# Filosofi
 
-Seluruh opsi diasumsikan layak dipilih.
+Dalam TWK CAT BKN, beberapa opsi dapat sama-sama benar.
 
-Generator bertugas menentukan opsi yang PALING TEPAT, bukan sekadar opsi yang benar.
-
----
-
-# Tahapan
-
-Setelah lima opsi selesai dibuat, lakukan evaluasi terhadap setiap opsi.
-
-Evaluasi meliputi:
-
-- kesesuaian dengan kompetensi;
-- kelengkapan solusi;
-- prioritas tindakan;
-- dampak;
-- keberlanjutan;
-- kesesuaian kewenangan.
+Namun hanya ada satu yang paling tepat berdasarkan kompetensi yang diukur.
 
 ---
 
-# Proses Komparasi
+# Dimensi Perbandingan
 
-Generator membandingkan setiap opsi terhadap opsi lainnya.
+Lakukan komparasi menggunakan satu atau beberapa dimensi berikut.
 
-Tujuan komparasi adalah menemukan:
+## Prioritas
 
-- opsi yang paling komprehensif;
-- opsi yang paling proporsional;
-- opsi yang paling sesuai kompetensi.
-
-Perbedaan kualitas harus bersifat substantif, bukan hanya redaksional.
+Mana tindakan yang paling perlu dilakukan terlebih dahulu.
 
 ---
 
-# Pemilihan Jawaban
+## Kewenangan
 
-Jawaban benar dipilih SETELAH proses komparasi selesai.
-
-Generator tidak boleh:
-
-- menentukan jawaban sejak awal;
-- membuat empat distraktor setelah jawaban dipilih.
-
-Urutan yang benar adalah:
-
-Stem
-
-↓
-
-Lima opsi
-
-↓
-
-Kalibrasi opsi
-
-↓
-
-Komparasi seluruh opsi
-
-↓
-
-Jawaban terbaik
-
-↓
-
-Pembahasan
+Mana tindakan yang paling sesuai dengan peran tokoh pada stem.
 
 ---
 
-# Validation
+## Efektivitas
 
-Generator memastikan bahwa:
-
-- minimal tiga opsi tampak layak dipilih;
-- seluruh opsi berada dalam kewenangan tokoh;
-- seluruh opsi relevan dengan konteks;
-- hanya terdapat satu opsi yang unggul setelah dilakukan komparasi.
+Mana tindakan yang paling efektif menyelesaikan persoalan.
 
 ---
 
-# Quality Target
+## Keberlanjutan
 
-Peserta seharusnya mengalami proses berpikir berikut:
+Mana tindakan yang memberikan dampak jangka panjang.
 
-"Saya rasa A benar."
+---
 
-"Lalu B juga masuk akal."
+## Proporsionalitas
 
-"C juga cukup baik."
+Mana tindakan yang paling seimbang terhadap seluruh kepentingan.
 
-"Saya harus membandingkan ketiganya."
+---
 
-Apabila peserta dapat langsung menemukan jawaban tanpa membandingkan beberapa opsi, maka soal belum memenuhi standar GerbangASN.
+## Pencegahan
+
+Mana tindakan yang paling mampu mencegah masalah serupa terjadi kembali.
+
+---
+
+## Realisme
+
+Mana tindakan yang paling mungkin diterapkan.
+
+---
+
+## Dampak
+
+Mana tindakan yang memberikan manfaat paling luas.
+
+---
+
+## Kesesuaian Kompetensi
+
+Mana tindakan yang paling mencerminkan kompetensi TWK yang sedang diuji.
+
+Dimensi ini selalu menjadi pertimbangan utama.
+
+---
+
+# Hindari Pola Tetap
+
+Generator tidak boleh selalu memilih jawaban karena:
+
+- paling komprehensif;
+- paling lengkap;
+- paling banyak langkahnya.
+
+Dalam beberapa soal, jawaban terbaik justru dapat berupa tindakan yang:
+
+- paling proporsional;
+- paling realistis;
+- paling sesuai kewenangan;
+- paling preventif;
+- paling efektif;
+- paling tepat sasaran;
+- paling mencerminkan nilai kebangsaan.
+
+---
+
+# Penyusunan Pembahasan
+
+Pembahasan harus membandingkan jawaban terbaik dengan seluruh opsi lain.
+
+Jelaskan:
+
+- mengapa opsi terbaik unggul;
+- pada dimensi apa opsi lain masih kurang.
+
+Hindari pembahasan yang hanya menyatakan:
+
+"Opsi A salah."
+
+Fokus pada alasan komparatif.
+
+---
+
+# Validasi
+
+Sebelum soal ditampilkan, lakukan pemeriksaan.
+
+Apakah jawaban dipilih karena memang paling tepat terhadap kompetensi?
+
+Atau hanya karena paling panjang dan paling lengkap?
+
+Apabila alasan kedua lebih dominan, lakukan revisi.
