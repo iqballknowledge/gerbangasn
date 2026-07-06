@@ -1,172 +1,112 @@
----
-title: Option Calibration
-version: 1.0
-status: Frozen
-scope: Global
-applies_to:
-  - TWK
----
-
 # Option Calibration
 
-## Purpose
+## Tujuan
 
-Dokumen ini mengatur bagaimana kualitas lima opsi jawaban dikalibrasi agar menyerupai karakter soal CAT BKN.
+Seluruh opsi harus memiliki kualitas yang berdekatan sehingga peserta benar-benar melakukan proses komparasi sebelum menentukan jawaban.
 
-Tujuan utama bukan membuat satu jawaban benar dan empat jawaban salah, tetapi menghasilkan lima opsi yang sama-sama layak dipertimbangkan sehingga peserta harus melakukan penalaran untuk menentukan jawaban PALING tepat.
-
----
-
-# Core Philosophy
-
-Generator harus membangun kompetisi antar opsi.
-
-Peserta tidak boleh dapat menemukan jawaban hanya dengan mengeliminasi opsi yang tampak buruk.
-
-Soal yang baik membuat peserta membandingkan beberapa opsi yang sama-sama kuat.
+Generator tidak boleh membuat satu opsi sangat kuat sementara empat lainnya mudah dieliminasi.
 
 ---
 
-# Target Option Distribution
+# Filosofi
 
-Setiap soal harus memiliki distribusi kualitas berikut.
+Dalam CAT BKN, kesulitan bukan berasal dari stem.
 
-| Level | Deskripsi |
-|--------|-----------|
-| Best | Jawaban paling tepat dan paling memenuhi seluruh indikator kompetensi. |
-| Strong | Sangat baik, tetapi masih kurang pada satu aspek penting. |
-| Strong | Sama-sama masuk akal, namun kurang sesuai dengan fokus utama soal. |
-| Moderate | Relevan, tetapi kurang lengkap atau kurang prioritas. |
-| Weak | Masih logis, namun paling jauh dari kompetensi yang diukur. |
+Kesulitan berasal dari kualitas opsi.
 
-Generator tidak boleh menghasilkan distribusi:
-
-Best
-
-↓
-
-Wrong
-
-Wrong
-
-Wrong
-
-Wrong
+Semakin dekat kualitas antar opsi, semakin tinggi kualitas soal.
 
 ---
 
-# Calibration Principle
+# Calibration Score
 
-Distraktor tidak dibuat untuk terlihat salah.
+Gunakan pendekatan berikut.
 
-Distraktor dibuat agar terlihat layak dipilih oleh peserta yang memiliki pemahaman parsial.
+Jawaban terbaik
 
----
+100
 
-# Strong Distractor Pattern
+Distraktor 1
 
-Distraktor kuat biasanya memiliki salah satu karakteristik berikut.
+95–99
 
-- benar secara umum tetapi kurang sesuai konteks;
-- menyelesaikan sebagian masalah, bukan akar masalah;
-- mewakili nilai positif lain yang tidak menjadi fokus utama;
-- realistis tetapi kurang komprehensif;
-- sesuai prosedur namun kurang efektif;
-- sesuai tujuan tetapi kurang tepat urutan prioritasnya.
+Distraktor 2
 
----
+92–96
 
-# Moderate Distractor Pattern
+Distraktor 3
 
-Distraktor sedang dapat berupa:
+88–94
 
-- solusi yang terlalu sempit;
-- solusi jangka pendek;
-- tindakan yang benar tetapi kurang strategis;
-- tindakan yang hanya menyasar gejala.
+Distraktor 4
+
+85–92
+
+Semua opsi tetap layak dipilih.
+
+Perbedaannya hanya terletak pada kualitas pertimbangan.
 
 ---
 
-# Weak Distractor Pattern
+# Cara Kalibrasi
 
-Distraktor lemah tetap harus logis.
+Distraktor tidak dibuat menjadi salah.
 
-Hindari opsi yang:
+Distraktor dibuat menjadi:
 
-- jelas melanggar hukum;
-- jelas tidak etis;
-- tidak relevan dengan konteks;
-- terlalu ekstrem;
-- mudah dieliminasi dalam sekali baca.
-
-Weak bukan berarti absurd.
-
-Weak berarti merupakan pilihan yang paling sedikit memenuhi indikator kompetensi.
+- kurang lengkap;
+- kurang proporsional;
+- kurang sesuai kewenangan;
+- kurang sesuai prioritas;
+- kurang realistis;
+- kurang berkelanjutan;
+- kurang tepat terhadap kompetensi.
 
 ---
 
-# Relative Evaluation Rule
+# Hindari Distraktor Lemah
 
-Jawaban benar dipilih secara relatif.
+Jangan membuat opsi yang langsung terlihat salah.
 
-Artinya generator harus mengevaluasi seluruh opsi terlebih dahulu, kemudian menentukan opsi yang PALING memenuhi indikator.
+Contoh:
 
-Generator tidak boleh menetapkan jawaban sebelum seluruh opsi selesai dibuat.
+- membiarkan masalah
+- menghindari tanggung jawab
+- bertindak emosional
+- menyerahkan kepada pihak yang tidak berwenang
+- melanggar hukum tanpa alasan kuat
 
----
-
-# Option Similarity Rule
-
-Seluruh opsi harus memiliki:
-
-- tingkat formalitas yang sama;
-- panjang kalimat yang relatif seimbang;
-- kualitas bahasa yang setara;
-- tingkat rasionalitas yang setara.
-
-Perbedaan kualitas hanya boleh berasal dari kualitas keputusan, bukan kualitas redaksi.
+Distraktor seperti ini terlalu mudah dieliminasi.
 
 ---
 
-# Elimination Resistance
+# Distraktor Berkualitas
 
-Generator harus menghindari opsi yang dapat dieliminasi hanya karena:
+Distraktor yang baik tetap:
 
-- terlalu pendek;
-- terlalu panjang;
-- terlalu ekstrem;
-- terlalu negatif;
-- terlalu emosional;
-- berada di luar kewenangan tokoh.
+- rasional;
+- etis;
+- mungkin dilakukan;
+- memiliki manfaat tertentu.
 
----
-
-# Priority Calibration
-
-Apabila dua opsi sama-sama baik, jawaban dipilih berdasarkan urutan berikut.
-
-1. Paling sesuai kompetensi yang diukur.
-2. Paling sesuai konteks.
-3. Menyelesaikan akar masalah.
-4. Berdampak paling luas.
-5. Berkelanjutan.
-6. Proporsional.
-7. Sesuai kewenangan tokoh.
+Namun masih kalah dibanding jawaban terbaik.
 
 ---
 
-# Self Calibration Checklist
+# Self Calibration
 
-Sebelum soal dinyatakan selesai, generator harus memeriksa:
+Sebelum soal ditampilkan, lakukan pemeriksaan.
 
-□ Apakah minimal tiga opsi terlihat layak dipilih?
+Tanyakan:
 
-□ Apakah seluruh opsi masih relevan dengan konteks?
+"Apakah minimal tiga opsi tampak sama-sama layak dipilih?"
 
-□ Apakah tidak ada opsi yang tampak jelas salah?
+Apabila jawabannya tidak, revisi opsi.
 
-□ Apakah jawaban benar unggul karena kualitas keputusan, bukan redaksi?
+---
 
-□ Apakah peserta yang hanya hafal teori berpotensi memilih distraktor kuat?
+# Target
 
-Jika salah satu jawaban adalah "Tidak", lakukan revisi sebelum menghasilkan soal.
+Peserta seharusnya dapat memperdebatkan dua atau tiga opsi terbaik sebelum menemukan jawaban paling tepat.
+
+Apabila jawaban langsung terlihat, kalibrasi dianggap gagal.
