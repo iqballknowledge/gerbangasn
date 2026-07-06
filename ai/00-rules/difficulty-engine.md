@@ -1,190 +1,104 @@
 ---
 title: Difficulty Engine
-version: 1.0
-status: Frozen
+version: 1.1
+status: Active
 scope: Global
 applies_to:
   - TWK
 ---
 
-# Difficulty Engine
-
-## Purpose
+# Purpose
 
 Dokumen ini mengatur bagaimana tingkat kesulitan soal dibangun.
 
-Kesulitan soal tidak ditentukan oleh panjang stem atau kompleksitas bahasa, tetapi oleh kualitas penalaran yang dibutuhkan untuk menentukan jawaban paling tepat.
+Kesulitan soal TIDAK berasal dari:
+
+- stem yang panjang;
+- bahasa yang rumit;
+- istilah yang sulit;
+- informasi yang berlebihan.
+
+Kesulitan soal harus berasal dari kualitas proses berpikir yang dibutuhkan peserta.
 
 ---
 
-# Core Principle
+# Prinsip Dasar
 
-Semakin tinggi tingkat kesulitan, semakin kecil perbedaan kualitas antar opsi.
+Semakin sulit soal, semakin sulit peserta membedakan kualitas antar opsi.
 
-Generator meningkatkan kesulitan melalui kualitas analisis, bukan melalui kerumitan redaksi.
-
----
-
-# Difficulty Factors
-
-Kesulitan soal dibentuk melalui kombinasi beberapa faktor berikut.
-
-- kualitas konteks;
-- kompleksitas pengambilan keputusan;
-- kedekatan kualitas antar opsi;
-- jumlah nilai positif yang muncul;
-- kebutuhan menentukan prioritas;
-- kebutuhan memahami konteks.
-
-Generator tidak meningkatkan kesulitan hanya dengan memperpanjang narasi.
+Bukan semakin sulit memahami stem.
 
 ---
 
-# Easy
+# Level Mudah
 
 Karakteristik:
 
-- satu kompetensi dominan;
-- konflik sederhana;
-- dua atau tiga opsi mudah dieliminasi;
-- jawaban terbaik terlihat jelas setelah memahami konsep.
+- kompetensi mudah dikenali;
+- hanya terdapat satu opsi yang jelas paling baik;
+- distraktor cukup logis tetapi mudah dieliminasi;
+- proses analisis singkat.
 
-Target peserta:
-
-Mampu menerapkan konsep dasar.
+Peserta cukup memahami konteks untuk menentukan jawaban.
 
 ---
 
-# Medium
+# Level Sedang
 
 Karakteristik:
 
-- terdapat dua atau lebih tindakan yang sama-sama baik;
-- minimal dua opsi kuat;
-- peserta harus memahami konteks;
-- terdapat kebutuhan menentukan prioritas.
+- terdapat beberapa opsi yang sama-sama layak;
+- peserta harus membandingkan kelebihan dan kelemahan tiap opsi;
+- jawaban terbaik muncul karena lebih komprehensif;
+- distraktor kuat namun masih memiliki kekurangan.
 
-Target peserta:
+Kesulitan berasal dari proses komparasi.
 
-Mampu menerapkan konsep pada situasi nyata.
+Bukan dari stem.
 
 ---
 
-# Hard
+# Level Sulit
 
 Karakteristik:
 
-- beberapa opsi tampak sama-sama benar;
-- seluruh opsi tetap realistis;
-- peserta harus membandingkan kualitas keputusan;
-- terdapat konflik nilai atau konflik kepentingan;
-- jawaban dipilih melalui analisis komparatif.
+- empat atau lima opsi sama-sama terlihat benar;
+- seluruh opsi berada dalam kewenangan tokoh;
+- seluruh opsi menyelesaikan masalah;
+- seluruh opsi sesuai nilai dasar.
 
-Target peserta:
+Perbedaan hanya terletak pada:
 
-Mampu menentukan solusi paling tepat berdasarkan konteks dan kompetensi.
+- prioritas;
+- kelengkapan;
+- keberlanjutan;
+- dampak;
+- kesesuaian kompetensi.
+
+Peserta harus melakukan penilaian komparatif sebelum menentukan jawaban.
 
 ---
 
-# Difficulty Escalation
+# Cara Meningkatkan Kesulitan
 
-Generator meningkatkan kesulitan dengan cara berikut.
+Generator tidak boleh meningkatkan kesulitan dengan:
 
-- menambah konflik pengambilan keputusan;
+- memperpanjang stem;
+- menambah tokoh;
+- menambah informasi yang tidak diperlukan;
+- menggunakan bahasa birokratis.
+
+Generator meningkatkan kesulitan dengan:
+
 - memperkuat kualitas distraktor;
 - memperkecil selisih kualitas antar opsi;
-- menambah kebutuhan menentukan prioritas;
-- membuat lebih dari satu tindakan tampak layak.
-
-Generator tidak meningkatkan kesulitan dengan:
-
-- bahasa yang rumit;
-- istilah teknis yang tidak perlu;
-- stem yang terlalu panjang;
-- informasi yang tidak relevan.
+- membuat seluruh opsi tampak layak dipilih;
+- mengurangi petunjuk menuju jawaban.
 
 ---
 
-# Difficulty Consistency
+# Validation
 
-Kesulitan harus berasal dari proses berpikir.
+Soal sulit dinyatakan berhasil apabila peserta tidak dapat menentukan jawaban hanya dengan eliminasi cepat.
 
-Apabila stem dipersingkat tetapi proses berpikir tetap sama, maka tingkat kesulitan tidak berubah.
-
----
-
-# Competency Alignment
-
-Setiap tingkat kesulitan tetap harus mengukur kompetensi yang sama.
-
-Generator tidak mengubah kompetensi hanya untuk membuat soal lebih sulit.
-
----
-
-# Difficulty Calibration
-
-Easy
-
-- satu opsi dominan;
-- satu distraktor kuat.
-
-Medium
-
-- satu jawaban terbaik;
-- dua distraktor kuat;
-- dua distraktor moderat.
-
-Hard
-
-- satu jawaban terbaik;
-- tiga distraktor kuat;
-- satu distraktor moderat.
-
-Tidak diperbolehkan menghasilkan:
-
-- satu jawaban benar;
-- empat distraktor lemah.
-
----
-
-# Language Consistency
-
-Bahasa pada seluruh tingkat kesulitan tetap:
-
-- formal;
-- jelas;
-- ringkas;
-- tidak ambigu.
-
-Kesulitan tidak boleh berasal dari cara penulisan.
-
----
-
-# Quality Indicators
-
-Soal dianggap memiliki tingkat kesulitan yang sesuai apabila:
-
-- tingkat kesulitan berasal dari proses analisis;
-- seluruh opsi tetap logis;
-- peserta harus membaca stem dengan cermat;
-- peserta harus membandingkan beberapa opsi.
-
----
-
-# Self Review Checklist
-
-Sebelum soal dinyatakan selesai, generator harus memeriksa:
-
-□ Apakah tingkat kesulitan berasal dari penalaran?
-
-□ Apakah bukan berasal dari bahasa yang rumit?
-
-□ Apakah jumlah distraktor kuat sesuai target tingkat kesulitan?
-
-□ Apakah seluruh opsi tetap realistis?
-
-□ Apakah peserta harus membandingkan beberapa opsi?
-
-□ Apakah jawaban dipilih karena paling tepat, bukan karena opsi lain salah?
-
-Jika salah satu jawaban adalah "Tidak", lakukan revisi sebelum menghasilkan soal.
+Peserta harus membandingkan minimal tiga opsi sebelum memilih jawaban terbaik.
