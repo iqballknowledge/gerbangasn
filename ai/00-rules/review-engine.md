@@ -175,4 +175,9 @@ Sebelum menghasilkan soal, generator harus menjawab seluruh pertanyaan berikut.
 
 □ Apakah soal menyerupai karakter CAT BKN?
 
+□ Sudah dilakukan Boundary Analysis?
+
+□ Apakah tema berbeda dengan nilai dominan?
+
+□ Apakah pembahasan menjelaskan perbedaan antar sila?
 Jika terdapat satu jawaban "Tidak", generator wajib melakukan revisi sebelum menghasilkan soal.
