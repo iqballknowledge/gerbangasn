@@ -1,193 +1,216 @@
 # Topic Identity Engine
 
-## Tujuan
+Versi : 2.0
 
-Topic Identity Engine memastikan bahwa setiap topik TWK memiliki karakter asesmen yang berbeda.
+Status : Active
 
-Meskipun seluruh soal berada dalam domain Tes Wawasan Kebangsaan, setiap subtopik memiliki kompetensi, pola asesmen, dan identitas yang khas.
-
-Generator harus mempertahankan identitas tersebut sehingga soal tidak terasa generik atau dapat dipertukarkan antar topik.
+Engine Type : Assessment Identity Engine
 
 ---
 
-# Filosofi
+# Tujuan
 
-Setiap topik TWK menguji kompetensi yang berbeda.
+Topic Identity Engine memastikan setiap soal tetap memiliki identitas yang jelas.
 
-Stem yang baik bukan hanya sesuai konteks, tetapi juga mencerminkan karakter topik yang sedang diujikan.
+Engine ini menjaga dua identitas sekaligus.
 
-Apabila nama topik dihapus tetapi soal tetap dapat digunakan pada hampir seluruh subtopik TWK tanpa perubahan berarti, maka identitas topik belum terbentuk dengan baik.
+1. Identitas sebagai soal Tes Wawasan Kebangsaan (TWK).
+2. Identitas topik yang sedang dibahas.
 
----
-
-# Prinsip Dasar
-
-Generator harus:
-
-- memahami kompetensi utama setiap topik;
-- membangun stem sesuai karakter topik;
-- membangun opsi yang menguji kompetensi topik tersebut;
-- menghindari penggunaan pola soal yang sama pada seluruh subtopik.
+Generator tidak boleh kehilangan salah satu identitas tersebut.
 
 ---
 
-# Karakter Umum TWK
+# Identity Layer
 
-Seluruh topik TWK pada dasarnya menguji:
+Question Engine GerbangASN mengenal dua lapisan identitas.
 
-- sikap;
-- pandangan;
-- implementasi nilai;
-- pengambilan keputusan berdasarkan nilai kebangsaan;
-- kemampuan menerapkan prinsip konstitusi, ideologi, dan kehidupan berbangsa.
+## Layer 1
 
-Problem solving hanya menjadi media asesmen, bukan tujuan utama soal.
+TWK Identity
 
----
+Menjamin bahwa soal tetap mengukur kompetensi Tes Wawasan Kebangsaan.
 
-# Identitas Tiap Topik
+## Layer 2
 
-## Implementasi Pancasila
+Topic Identity
 
-Karakter utama:
+Menjamin bahwa soal tetap fokus pada topik yang sedang dipelajari.
 
-- dominan implementatif;
-- menguji penerapan nilai setiap sila;
-- menggunakan konteks kehidupan sehari-hari;
-- sering menggunakan frasa seperti:
-
-  - implementasi Pancasila;
-  - pengamalan sila;
-  - berdasarkan nilai Pancasila;
-  - sikap yang mencerminkan nilai Pancasila.
-
-Sekitar 70–80% soal sebaiknya berbentuk implementasi.
-
-Sisanya dapat berupa soal konseptual.
+Kedua layer wajib dipenuhi secara bersamaan.
 
 ---
 
-## Bela Negara
+# TWK Identity
 
-Karakter utama:
+Seluruh soal harus tetap memiliki karakter TWK.
 
-- menguji bentuk nyata bela negara;
-- tidak selalu identik dengan militer;
-- banyak menggunakan konteks profesi, pendidikan, pelayanan publik, teknologi, ekonomi, sosial, dan lingkungan.
+Generator tidak boleh menghasilkan soal yang berubah menjadi:
 
-Generator harus menekankan kontribusi warga negara sesuai profesinya.
+- TIU;
+- TKP;
+- Tes Pengetahuan Umum;
+- Tes Akademik;
+- Tes Logika.
 
----
-
-## Nasionalisme
-
-Karakter utama:
-
-- menguji rasa cinta tanah air;
-- kepentingan bangsa di atas kepentingan pribadi atau golongan;
-- menjaga persatuan;
-- menghargai keberagaman;
-- menjaga identitas nasional.
-
-Konteks sering berupa konflik kepentingan, keberagaman, atau kehidupan bermasyarakat.
+Karakter soal harus tetap mengukur wawasan kebangsaan.
 
 ---
 
-## Integritas
+# Karakter Soal TWK
 
-Karakter utama:
+Soal TWK berfokus pada kemampuan peserta untuk:
 
-- menguji kejujuran;
-- konsistensi moral;
-- tanggung jawab;
-- kepatuhan terhadap aturan;
-- keberanian mengambil keputusan yang benar.
+- memahami nilai kebangsaan;
+- memahami dasar negara;
+- memahami konstitusi;
+- memahami kehidupan berbangsa dan bernegara;
+- menganalisis implementasi nilai kebangsaan;
+- memilih keputusan yang paling sesuai dengan nilai kebangsaan.
 
-Banyak menggunakan situasi dilema etika.
-
----
-
-## UUD Negara Republik Indonesia Tahun 1945
-
-Karakter utama:
-
-- menguji implementasi nilai konstitusi;
-- hak dan kewajiban warga negara;
-- hubungan lembaga negara;
-- prinsip negara hukum;
-- demokrasi konstitusional.
-
-Soal tidak hanya menguji hafalan pasal, tetapi penerapannya.
+Bukan sekadar menghafal.
 
 ---
 
-## Pilar Negara
+# Topic Identity
 
-Karakter utama:
+Selain menjaga identitas TWK,
 
-- menguji pemahaman hubungan antara:
+Generator juga wajib menjaga identitas topik.
 
-  - Pancasila;
-  - UUD NRI Tahun 1945;
-  - NKRI;
-  - Bhinneka Tunggal Ika.
+Contoh:
 
-Fokus pada fungsi masing-masing pilar dalam kehidupan berbangsa.
+Topik:
 
----
+Implementasi Pancasila
 
-## Gagasan Utama
+↓
 
-Karakter utama:
+Mayoritas soal harus tetap menguji implementasi Pancasila.
 
-- menguji kemampuan memahami ide pokok bacaan;
-- fokus pada informasi utama;
-- tidak menguji tata bahasa.
+Bukan berubah menjadi:
 
----
-
-## Kalimat Efektif
-
-Karakter utama:
-
-- menguji ketepatan penggunaan bahasa Indonesia;
-- struktur kalimat;
-- logika kalimat;
-- kehematan;
-- kepaduan.
+- sejarah Pancasila;
+- bunyi sila;
+- UUD;
+- NKRI;
+- Bhinneka Tunggal Ika.
 
 ---
 
-# Distribusi Identitas
+# Rasio Topik
 
-Dalam satu paket soal, identitas topik harus tampak secara konsisten.
+Minimal 80%
 
-Generator tidak harus selalu menyebut nama topik secara eksplisit.
+hingga
 
-Namun mayoritas soal harus membuat peserta dapat mengenali kompetensi yang sedang diukur.
+90%
+
+soal harus benar-benar berada pada kompetensi utama topik.
+
+Sisanya maksimal 10–20% boleh menyentuh kompetensi pendukung apabila memang diperlukan untuk memperkuat konteks.
 
 ---
 
-# Validasi
+# Kompetensi Pendukung
 
-Sebelum soal dinyatakan selesai, lakukan pemeriksaan berikut.
+Kompetensi pendukung hanya boleh muncul apabila:
 
-1. Apakah soal mencerminkan karakter topik yang sedang diuji?
+- membantu analisis;
+- memperjelas konteks;
+- menjadi konsekuensi logis dari topik.
 
-2. Apakah konteks hanya menjadi media asesmen, bukan tujuan asesmen?
+Kompetensi pendukung tidak boleh mengambil alih fokus soal.
 
-3. Apakah kompetensi utama topik tetap menjadi pusat penilaian?
+---
 
-4. Apakah soal akan kehilangan identitas apabila nama topik dihapus?
+# Prioritas Kompetensi
 
-Apabila jawaban nomor empat adalah "ya", maka soal perlu direvisi agar identitas topiknya lebih kuat.
+Generator harus mengikuti urutan berikut.
+
+1. Kompetensi utama topik.
+2. Kompetensi TWK yang relevan.
+3. Kompetensi pendukung.
+
+Apabila terjadi konflik,
+
+kompetensi utama topik selalu menjadi prioritas.
+
+---
+
+# Identitas Stem
+
+Stem harus menunjukkan identitas topik secara alami.
+
+Contoh pada topik Implementasi Pancasila:
+
+Kalimat penutup yang dianjurkan:
+
+- Berdasarkan nilai-nilai Pancasila...
+- Sikap yang paling mencerminkan pengamalan Pancasila adalah...
+- Tindakan yang paling sesuai dengan implementasi Pancasila adalah...
+- Perilaku yang paling mencerminkan nilai sila ... adalah...
+- Berdasarkan semangat Pancasila...
+- Jika ditinjau dari implementasi Pancasila...
+- Pandangan yang paling sesuai dengan nilai Pancasila adalah...
+- Berdasarkan prinsip kehidupan berbangsa menurut Pancasila...
+
+Generator tidak harus selalu menggunakan pola tersebut.
+
+Namun sebagian besar soal sebaiknya tetap memperlihatkan identitas topik secara eksplisit.
+
+---
+
+# Variasi Identitas
+
+Tidak semua soal harus menyebut nama topik secara langsung.
+
+Generator boleh menggunakan dua pola.
+
+## Pola Eksplisit
+
+Topik disebut secara langsung.
+
+Contoh:
+
+"...yang paling mencerminkan implementasi Pancasila..."
+
+## Pola Implisit
+
+Topik tidak disebutkan,
+
+tetapi seluruh konteks dan opsi tetap mengukur kompetensi yang sama.
+
+Contoh:
+
+Konteks musyawarah desa.
+
+Peserta harus menyimpulkan nilai sila keempat.
 
 ---
 
 # Larangan
 
-Jangan membuat seluruh topik menggunakan pola yang sama.
+Generator tidak boleh:
 
-Hindari menjadikan seluruh soal hanya berupa problem solving umum.
+- berpindah topik;
+- mengubah kompetensi utama;
+- membuat soal menjadi hafalan apabila topiknya implementasi;
+- menjadikan kompetensi pendukung sebagai fokus utama;
+- membuat soal yang kehilangan identitas TWK.
 
-Setiap topik harus memiliki karakter asesmen yang khas sehingga peserta benar-benar diuji sesuai kompetensi TWK yang ditargetkan.
+---
+
+# Target
+
+Setelah membaca soal,
+
+peserta langsung dapat mengenali bahwa:
+
+1. ini adalah soal TWK;
+
+dan
+
+2. soal tersebut sedang menguji topik yang benar.
+
+Topic Identity Engine menjaga konsistensi tersebut pada seluruh paket soal GerbangASN.
