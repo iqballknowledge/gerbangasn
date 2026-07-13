@@ -197,3 +197,7 @@ Sebelum soal ditampilkan, pastikan:
 - tidak ada distraktor yang mudah dieliminasi;
 - pembahasan bersifat komparatif;
 - alasan kemenangan jawaban dapat dijelaskan menggunakan Comparative Decision Matrix.
+
+Apabila suatu soal memiliki irisan antar nilai Pancasila,
+
+pembahasan wajib menjelaskan mengapa jawaban benar lebih mencerminkan nilai dominan dibanding opsi lain yang sebenarnya masih mencerminkan nilai Pancasila namun pada sila yang berbeda.
