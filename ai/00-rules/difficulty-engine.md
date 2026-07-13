@@ -1,104 +1,248 @@
----
-title: Difficulty Engine
-version: 1.1
-status: Active
-scope: Global
-applies_to:
-  - TWK
----
+# Difficulty Engine
 
-# Purpose
+Versi : 2.0
 
-Dokumen ini mengatur bagaimana tingkat kesulitan soal dibangun.
+Status : Active
 
-Kesulitan soal TIDAK berasal dari:
-
-- stem yang panjang;
-- bahasa yang rumit;
-- istilah yang sulit;
-- informasi yang berlebihan.
-
-Kesulitan soal harus berasal dari kualitas proses berpikir yang dibutuhkan peserta.
+Engine Type : Cognitive Complexity Engine
 
 ---
 
-# Prinsip Dasar
+# Tujuan
 
-Semakin sulit soal, semakin sulit peserta membedakan kualitas antar opsi.
+Difficulty Engine mengatur tingkat kompleksitas berpikir yang diperlukan peserta untuk menemukan jawaban terbaik.
 
-Bukan semakin sulit memahami stem.
+Engine ini tidak mengukur tingkat kesulitan berdasarkan panjang soal, banyaknya kalimat, atau istilah yang digunakan.
 
----
-
-# Level Mudah
-
-Karakteristik:
-
-- kompetensi mudah dikenali;
-- hanya terdapat satu opsi yang jelas paling baik;
-- distraktor cukup logis tetapi mudah dieliminasi;
-- proses analisis singkat.
-
-Peserta cukup memahami konteks untuk menentukan jawaban.
+Kesulitan ditentukan oleh kualitas analisis yang harus dilakukan peserta.
 
 ---
 
-# Level Sedang
+# Prinsip
 
-Karakteristik:
+Dalam soal TWK SKD CAT BKN,
 
-- terdapat beberapa opsi yang sama-sama layak;
-- peserta harus membandingkan kelebihan dan kelemahan tiap opsi;
-- jawaban terbaik muncul karena lebih komprehensif;
-- distraktor kuat namun masih memiliki kekurangan.
+hampir seluruh opsi tampak benar.
 
-Kesulitan berasal dari proses komparasi.
+Perbedaan antar level bukan terletak pada benar atau salahnya opsi,
 
-Bukan dari stem.
+melainkan pada seberapa kompleks proses analisis yang diperlukan untuk menentukan jawaban paling tepat.
 
 ---
 
-# Level Sulit
+# Empat Tingkat Kompleksitas
 
-Karakteristik:
+Question Engine GerbangASN menggunakan empat level.
 
-- empat atau lima opsi sama-sama terlihat benar;
-- seluruh opsi berada dalam kewenangan tokoh;
-- seluruh opsi menyelesaikan masalah;
-- seluruh opsi sesuai nilai dasar.
+1.
 
-Perbedaan hanya terletak pada:
+Standard
 
-- prioritas;
-- kelengkapan;
-- keberlanjutan;
-- dampak;
-- kesesuaian kompetensi.
+2.
 
-Peserta harus melakukan penilaian komparatif sebelum menentukan jawaban.
+Analytical
+
+3.
+
+Complex
+
+4.
+
+HOTS
+
+Generator wajib memahami karakter masing-masing level.
 
 ---
 
-# Cara Meningkatkan Kesulitan
+# Level 1
 
-Generator tidak boleh meningkatkan kesulitan dengan:
+Standard
+
+Karakter:
+
+- hanya mengukur satu kompetensi utama;
+- konflik sederhana;
+- konteks realistis;
+- peserta tetap harus melakukan analisis;
+- jawaban tidak langsung terlihat;
+- dua sampai tiga opsi tampak layak dipilih.
+
+Level ini bukan soal hafalan.
+
+Level ini juga bukan soal yang jawabannya dapat ditemukan dalam beberapa detik.
+
+---
+
+Target waktu berpikir:
+
+sekitar
+
+30–60 detik.
+
+---
+
+# Level 2
+
+Analytical
+
+Karakter:
+
+- satu kompetensi utama;
+- konflik lebih nyata;
+- hampir seluruh opsi terlihat benar;
+- peserta harus membandingkan beberapa pilihan;
+- diperlukan analisis komparatif.
+
+Biasanya terdapat tiga sampai empat opsi yang sangat layak dipilih.
+
+---
+
+Target waktu berpikir:
+
+sekitar
+
+45–75 detik.
+
+---
+
+# Level 3
+
+Complex
+
+Karakter:
+
+- konflik lebih kompleks;
+- beberapa nilai kebangsaan saling bersinggungan;
+- hampir seluruh opsi benar secara umum;
+- hanya satu opsi yang paling sesuai dengan kompetensi utama;
+- peserta harus menentukan prioritas nilai.
+
+Distraktor harus sangat kuat.
+
+---
+
+Target waktu berpikir:
+
+sekitar
+
+60–90 detik.
+
+---
+
+# Level 4
+
+HOTS
+
+Higher Order Thinking Skills
+
+Karakter:
+
+- konflik multidimensi;
+- terdapat trade-off antar nilai;
+- lebih dari satu sila atau prinsip kebangsaan tampak relevan;
+- peserta harus menentukan nilai yang paling dominan;
+- diperlukan analisis kebijakan, kepemimpinan, atau pengambilan keputusan.
+
+Jawaban benar merupakan pilihan yang paling sesuai,
+
+bukan satu-satunya pilihan yang baik.
+
+---
+
+Target waktu berpikir:
+
+sekitar
+
+75–120 detik.
+
+---
+
+# Faktor Penentu Kompleksitas
+
+Generator tidak boleh menaikkan level hanya dengan:
 
 - memperpanjang stem;
-- menambah tokoh;
-- menambah informasi yang tidak diperlukan;
-- menggunakan bahasa birokratis.
+- menggunakan istilah sulit;
+- memperbanyak informasi yang tidak relevan.
 
-Generator meningkatkan kesulitan dengan:
+Kompleksitas hanya boleh meningkat melalui:
 
-- memperkuat kualitas distraktor;
-- memperkecil selisih kualitas antar opsi;
-- membuat seluruh opsi tampak layak dipilih;
-- mengurangi petunjuk menuju jawaban.
+- kualitas konflik;
+- kualitas distraktor;
+- banyaknya opsi yang sama-sama layak;
+- kedekatan kualitas antar opsi;
+- kebutuhan menentukan prioritas nilai.
 
 ---
 
-# Validation
+# Hubungan dengan Dominant Value Engine
 
-Soal sulit dinyatakan berhasil apabila peserta tidak dapat menentukan jawaban hanya dengan eliminasi cepat.
+Semakin tinggi level,
 
-Peserta harus membandingkan minimal tiga opsi sebelum memilih jawaban terbaik.
+semakin sulit menentukan nilai dominan.
+
+Pada level HOTS,
+
+lebih dari satu nilai dapat tampak benar,
+
+namun hanya satu yang paling sesuai dengan kompetensi utama.
+
+---
+
+# Hubungan dengan Comparison Engine
+
+Level yang lebih tinggi harus menghasilkan pembahasan yang lebih komparatif.
+
+Semakin tinggi kompleksitas,
+
+semakin penting menjelaskan mengapa setiap distraktor kalah tipis dibanding jawaban terbaik.
+
+---
+
+# Distribusi Paket Soal
+
+Untuk menjaga ritme seperti CAT SKD BKN,
+
+paket soal direkomendasikan menggunakan komposisi berikut.
+
+20%
+
+Standard
+
+40%
+
+Analytical
+
+30%
+
+Complex
+
+10%
+
+HOTS
+
+Komposisi ini dapat disesuaikan dengan kebutuhan tryout.
+
+---
+
+# Larangan
+
+Generator tidak boleh:
+
+- membuat soal hafalan pada level Standard;
+- menaikkan level hanya dengan memperpanjang narasi;
+- membuat distraktor yang jelas salah;
+- menggunakan istilah rumit tanpa meningkatkan kualitas analisis;
+- menjadikan panjang opsi sebagai indikator jawaban benar.
+
+---
+
+# Target
+
+Setiap kenaikan level harus meningkatkan kualitas proses berpikir peserta,
+
+bukan sekadar meningkatkan panjang soal.
+
+Peserta harus merasa bahwa seluruh opsi masuk akal,
+
+namun hanya satu yang benar-benar paling tepat sesuai kompetensi yang diukur.
