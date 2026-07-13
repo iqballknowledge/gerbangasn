@@ -1,112 +1,285 @@
-# Option Calibration
+# Option Calibration Engine
 
-## Tujuan
+Versi : 2.0
 
-Seluruh opsi harus memiliki kualitas yang berdekatan sehingga peserta benar-benar melakukan proses komparasi sebelum menentukan jawaban.
+Status : Active
 
-Generator tidak boleh membuat satu opsi sangat kuat sementara empat lainnya mudah dieliminasi.
+Engine Type : Option Quality Engine
+
+---
+
+# Tujuan
+
+Option Calibration Engine memastikan bahwa seluruh pilihan jawaban memiliki kualitas yang kompetitif sehingga peserta harus melakukan analisis untuk menemukan jawaban terbaik.
+
+Engine ini tidak bertujuan membuat jawaban benar sulit ditemukan.
+
+Engine ini bertujuan membuat seluruh opsi sama-sama layak dipertimbangkan.
 
 ---
 
 # Filosofi
 
-Dalam CAT BKN, kesulitan bukan berasal dari stem.
+Pada soal TWK SKD CAT BKN,
 
-Kesulitan berasal dari kualitas opsi.
+peserta jarang memilih antara:
 
-Semakin dekat kualitas antar opsi, semakin tinggi kualitas soal.
+Benar
 
----
+vs
 
-# Calibration Score
+Salah.
 
-Gunakan pendekatan berikut.
+Peserta justru memilih antara:
 
-Jawaban terbaik
+Baik
 
-100
+vs
 
-Distraktor 1
+Lebih Baik.
 
-95–99
+atau
 
-Distraktor 2
+Tepat
 
-92–96
+vs
 
-Distraktor 3
+Lebih Tepat.
 
-88–94
-
-Distraktor 4
-
-85–92
-
-Semua opsi tetap layak dipilih.
-
-Perbedaannya hanya terletak pada kualitas pertimbangan.
+Jawaban benar merupakan pilihan yang PALING sesuai dengan kompetensi yang sedang diukur.
 
 ---
 
-# Cara Kalibrasi
+# Prinsip Kalibrasi
 
-Distraktor tidak dibuat menjadi salah.
+Generator wajib memastikan bahwa setiap opsi:
 
-Distraktor dibuat menjadi:
+- memiliki logika yang masuk akal;
+- memiliki alasan rasional;
+- relevan terhadap konteks soal;
+- mampu menarik peserta untuk mempertimbangkannya.
 
+Tidak boleh ada opsi yang terasa dibuat hanya sebagai pelengkap.
+
+---
+
+# Competitive Options Principle
+
+Kelima opsi harus terasa kompetitif.
+
+Seluruh opsi seolah-olah mempunyai peluang untuk menjadi jawaban benar.
+
+Peserta baru dapat menentukan jawaban setelah melakukan analisis terhadap seluruh opsi.
+
+---
+
+# Equal Quality Principle
+
+Seluruh opsi harus memiliki kualitas penulisan yang setara.
+
+Generator tidak boleh membuat:
+
+- satu opsi sangat rinci;
+- satu opsi sangat pendek;
+- satu opsi jauh lebih profesional.
+
+Perbedaan kualitas redaksi dapat menjadi petunjuk jawaban.
+
+---
+
+# Attractive Distractor
+
+Distraktor harus cukup kuat sehingga masih mungkin dipilih oleh peserta yang belum memahami kompetensi secara utuh.
+
+Distraktor tidak boleh:
+
+- jelas salah;
+- tidak relevan;
+- bertentangan langsung dengan nilai kebangsaan;
+- terasa dibuat hanya untuk memenuhi lima pilihan.
+
+---
+
+# Competitive Strength
+
+Generator harus membayangkan setiap opsi memiliki tingkat kekuatan.
+
+Contoh konseptual:
+
+Opsi A
+
+91
+
+Opsi B
+
+92
+
+Opsi C
+
+95
+
+Opsi D
+
+90
+
+Opsi E
+
+89
+
+Jawaban benar unggul tipis,
+
+bukan unggul jauh.
+
+Semakin kecil selisih kualitas antar opsi,
+
+semakin baik kualitas soal.
+
+---
+
+# Wrong for the Right Reason
+
+Distraktor sebaiknya tetap merupakan tindakan yang baik.
+
+Namun,
+
+distraktor kalah karena:
+
+- bukan kompetensi utama;
 - kurang lengkap;
-- kurang proporsional;
-- kurang sesuai kewenangan;
-- kurang sesuai prioritas;
-- kurang realistis;
-- kurang berkelanjutan;
-- kurang tepat terhadap kompetensi.
+- kurang prioritas;
+- kurang sesuai dengan nilai dominan.
+
+Distraktor tidak kalah karena menjadi tindakan buruk.
 
 ---
 
-# Hindari Distraktor Lemah
+# Dominant Value Consistency
 
-Jangan membuat opsi yang langsung terlihat salah.
+Seluruh opsi boleh mengandung nilai kebangsaan.
+
+Namun hanya satu opsi yang paling sesuai dengan:
+
+- kompetensi utama;
+- nilai dominan;
+- tujuan soal.
+
+Generator tidak boleh membuat dua opsi dengan kualitas yang benar-benar setara.
+
+Harus tetap terdapat satu jawaban terbaik.
+
+---
+
+# Psychological Pull
+
+Setiap opsi sebaiknya mempunyai daya tarik psikologis.
 
 Contoh:
 
-- membiarkan masalah
-- menghindari tanggung jawab
-- bertindak emosional
-- menyerahkan kepada pihak yang tidak berwenang
-- melanggar hukum tanpa alasan kuat
+Satu opsi menarik bagi peserta yang terlalu idealis.
 
-Distraktor seperti ini terlalu mudah dieliminasi.
+Satu opsi menarik bagi peserta yang terlalu formal.
 
----
+Satu opsi menarik bagi peserta yang terlalu pragmatis.
 
-# Distraktor Berkualitas
+Satu opsi menarik bagi peserta yang hanya memahami konsep secara umum.
 
-Distraktor yang baik tetap:
+Satu opsi merupakan pilihan paling tepat bagi peserta yang benar-benar memahami kompetensi.
 
-- rasional;
-- etis;
-- mungkin dilakukan;
-- memiliki manfaat tertentu.
+Dengan demikian,
 
-Namun masih kalah dibanding jawaban terbaik.
+kesalahan peserta menjadi hasil proses berpikir,
+
+bukan akibat distraktor yang buruk.
 
 ---
 
-# Self Calibration
+# No Dummy Option
 
-Sebelum soal ditampilkan, lakukan pemeriksaan.
+Generator tidak boleh membuat opsi pelengkap.
 
-Tanyakan:
+Apabila satu opsi dihapus,
 
-"Apakah minimal tiga opsi tampak sama-sama layak dipilih?"
+lalu kualitas soal tidak berubah,
 
-Apabila jawabannya tidak, revisi opsi.
+berarti opsi tersebut merupakan dummy option.
+
+Dummy option wajib dihilangkan.
+
+---
+
+# Natural Alternatives
+
+Seluruh opsi harus terasa sebagai alternatif yang mungkin benar-benar dilakukan dalam situasi tersebut.
+
+Generator tidak boleh membuat opsi yang:
+
+- terlalu ekstrem;
+- tidak realistis;
+- di luar kewenangan tokoh pada soal;
+- tidak sesuai konteks.
+
+---
+
+# Similar Plausibility
+
+Seluruh opsi harus memiliki tingkat kewajaran yang relatif setara.
+
+Peserta tidak boleh dapat mengeliminasi opsi hanya karena:
+
+- terlalu ekstrem;
+- terlalu sederhana;
+- terlalu tidak masuk akal.
+
+---
+
+# Language Calibration
+
+Perbedaan panjang kalimat tidak boleh menjadi petunjuk jawaban.
+
+Generator menjaga agar:
+
+- panjang opsi relatif seimbang;
+- gaya bahasa konsisten;
+- tingkat formalitas seragam.
+
+---
+
+# Common CAT Pattern
+
+Karakter opsi pada CAT SKD BKN umumnya memiliki pola berikut.
+
+- seluruh opsi terdengar benar;
+- seluruh opsi memiliki nilai positif;
+- perbedaan terletak pada prioritas tindakan;
+- jawaban dipilih karena paling mencerminkan kompetensi yang diukur.
+
+Generator wajib meniru pola tersebut.
+
+---
+
+# Larangan
+
+Generator tidak boleh:
+
+- membuat satu opsi jelas paling baik;
+- membuat satu opsi sangat buruk;
+- membuat jawaban benar jauh lebih panjang;
+- menggunakan kata-kata absolut sebagai petunjuk jawaban;
+- membuat distraktor tidak relevan;
+- membuat dua jawaban yang sama kuat sehingga menimbulkan ambiguitas.
 
 ---
 
 # Target
 
-Peserta seharusnya dapat memperdebatkan dua atau tiga opsi terbaik sebelum menemukan jawaban paling tepat.
+Peserta harus merasa:
 
-Apabila jawaban langsung terlihat, kalibrasi dianggap gagal.
+"Semua pilihan tampak benar."
+
+Namun,
+
+setelah melakukan analisis komparatif,
+
+hanya satu pilihan yang benar-benar paling tepat sesuai kompetensi yang sedang diukur.
+
+Inilah karakter utama pilihan jawaban pada soal TWK SKD CAT BKN dan menjadi standar Option Calibration GerbangASN.
