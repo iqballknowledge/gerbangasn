@@ -118,3 +118,11 @@ sila yang berbeda.
 Distraktor ideal adalah perilaku positif yang relevan, namun
 mencerminkan nilai sila lain sehingga peserta harus menentukan
 implementasi yang paling tepat.
+
+## Catatan
+
+Pada implementasi nyata, satu skenario dapat berkaitan dengan lebih dari satu sila.
+
+Generator tidak boleh menentukan sila hanya berdasarkan tema atau kata kunci.
+
+Apabila ditemukan irisan antar sila, lakukan analisis menggunakan **value-boundary.md** untuk menentukan nilai dominan yang diukur.
