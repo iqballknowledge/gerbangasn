@@ -1,95 +1,121 @@
-# Option Naturalness Engine
+# Option Naturalness
 
-Versi : 1.0
-
-Status : Active
+Versi 2.2
 
 ---
 
 # Tujuan
 
-Menghilangkan ciri khas soal buatan AI.
+Membuat lima opsi terasa ditulis manusia.
 
 ---
 
-# Filosofi
+# Jangan Simetris
 
-Peserta tidak boleh dapat menebak jawaban hanya dari bentuk opsi.
+Generator dilarang membuat lima opsi yang semuanya diawali:
 
----
+Mengadakan...
 
-# Natural Variation
+Memberikan...
 
-Panjang kalimat harus bervariasi.
+Mengajak...
 
-Jawaban benar tidak boleh selalu paling panjang.
+Menetapkan...
 
-Jawaban benar tidak boleh selalu paling lengkap.
+Mengizinkan...
 
-Jawaban benar tidak boleh selalu mengandung dua tindakan.
-
----
-
-# Length Balance
-
-Perbedaan panjang antar opsi maksimal sekitar 20%.
+Karena pola tersebut mudah dikenali.
 
 ---
 
-# Structural Balance
+# Variasi Struktur
 
-Variasikan pola kalimat.
+Contoh alami
 
-Contoh
+A
 
-langsung
+Tetap melayani...
 
-bertahap
+B
 
-kebijakan
+Pelayanan diberikan...
 
-ajakan
+C
 
-fasilitasi
+Sebaiknya...
 
----
+D
 
-# Hidden Correctness
+Tidak perlu...
 
-Jawaban benar tidak boleh memiliki ciri:
+E
 
-- paling sopan
+Memberikan kesempatan...
 
-- paling lengkap
-
-- paling rinci
-
-- paling positif
-
-- paling panjang
+Semua boleh berbeda.
 
 ---
 
-# AI Pattern
+# Variasi Panjang
 
-Generator harus menghindari pola:
+Tidak boleh:
 
-A pendek
+18 kata
 
-B pendek
+19 kata
 
-C sangat panjang ← benar
+18 kata
 
-D pendek
+20 kata
 
-E pendek
+19 kata
+
+Harus alami.
 
 ---
 
-# Validasi
+# Hidden Correct Answer
 
-✓ jawaban benar tidak dapat dikenali dari bentuk
+Jawaban benar tidak boleh:
 
-✓ seluruh opsi tampak alami
+• paling panjang
 
-✓ distribusi panjang seimbang
+• paling rinci
+
+• paling sopan
+
+• paling sistematis
+
+• paling lengkap
+
+Generator wajib menyamarkan jawaban benar.
+
+---
+
+# Human Writing
+
+Kalimat harus terdengar seperti ditulis manusia.
+
+Bukan hasil template.
+
+---
+
+# Lexical Variation
+
+Jangan mengulang kata yang sama pada seluruh opsi.
+
+Misalnya
+
+"mengadakan"
+
+muncul lima kali.
+
+---
+
+# Natural Reading Test
+
+Generator membaca lima opsi.
+
+Apabila dapat menebak jawaban hanya dari gaya bahasa,
+
+opsi wajib diperbaiki.
