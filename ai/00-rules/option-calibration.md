@@ -1,285 +1,247 @@
-# Option Calibration Engine
+# Option Calibration
 
 Versi : 2.0
 
 Status : Active
 
-Engine Type : Option Quality Engine
-
 ---
 
 # Tujuan
 
-Option Calibration Engine memastikan bahwa seluruh pilihan jawaban memiliki kualitas yang kompetitif sehingga peserta harus melakukan analisis untuk menemukan jawaban terbaik.
+Option Calibration bertugas melakukan kalibrasi akhir terhadap seluruh opsi jawaban.
 
-Engine ini tidak bertujuan membuat jawaban benar sulit ditemukan.
+Engine ini tidak membuat opsi baru.
 
-Engine ini bertujuan membuat seluruh opsi sama-sama layak dipertimbangkan.
+Engine ini tidak menentukan psikologi peserta.
+
+Engine ini tidak menentukan hierarchy.
+
+Engine ini memastikan bahwa lima opsi yang telah dihasilkan benar-benar siap digunakan sebagai soal CAT SKD BKN.
+
+---
+
+# Posisi dalam Question Engine
+
+Scenario
+
+↓
+
+Conflict
+
+↓
+
+Stem
+
+↓
+
+Candidate Option Generation
+
+↓
+
+Option Hierarchy
+
+↓
+
+Option Psychology
+
+↓
+
+Option Naturalness
+
+↓
+
+Option Calibration
+
+↓
+
+Difficulty
+
+↓
+
+Comparison
+
+↓
+
+Review
 
 ---
 
 # Filosofi
 
-Pada soal TWK SKD CAT BKN,
+Option yang baik bukan option yang berbeda jauh.
 
-peserta jarang memilih antara:
+Option yang baik adalah lima pilihan yang sama-sama layak dipilih tetapi hanya satu yang paling tepat.
 
-Benar
-
-vs
-
-Salah.
-
-Peserta justru memilih antara:
-
-Baik
-
-vs
-
-Lebih Baik.
-
-atau
-
-Tepat
-
-vs
-
-Lebih Tepat.
-
-Jawaban benar merupakan pilihan yang PALING sesuai dengan kompetensi yang sedang diukur.
+Kalibrasi dilakukan setelah seluruh opsi selesai disusun.
 
 ---
 
-# Prinsip Kalibrasi
+# Fungsi
 
-Generator wajib memastikan bahwa setiap opsi:
+Option Calibration bertugas:
 
-- memiliki logika yang masuk akal;
-- memiliki alasan rasional;
-- relevan terhadap konteks soal;
-- mampu menarik peserta untuk mempertimbangkannya.
+• memastikan seluruh opsi masih relevan terhadap stem;
 
-Tidak boleh ada opsi yang terasa dibuat hanya sebagai pelengkap.
+• memastikan seluruh opsi masih mengukur kompetensi utama;
+
+• memastikan seluruh opsi masih berada dalam topik yang sama;
+
+• menghilangkan opsi yang terlalu lemah;
+
+• memastikan hanya terdapat satu jawaban paling tepat.
+
+Engine ini tidak lagi mengatur:
+
+- hierarchy;
+- psikologi;
+- naturalness.
+
+Ketiga aspek tersebut telah ditangani oleh engine masing-masing.
 
 ---
 
-# Competitive Options Principle
+# Kompetensi Check
 
-Kelima opsi harus terasa kompetitif.
+Setiap opsi harus tetap berada pada kompetensi yang sedang diukur.
 
-Seluruh opsi seolah-olah mempunyai peluang untuk menjadi jawaban benar.
+Contoh
 
-Peserta baru dapat menentukan jawaban setelah melakukan analisis terhadap seluruh opsi.
+Kompetensi
+
+Implementasi Sila Kelima
+
+Seluruh opsi tetap harus berada pada konteks implementasi sila kelima atau memiliki hubungan logis dengan konflik yang sedang diuji.
+
+Tidak boleh muncul opsi yang keluar dari konteks soal.
 
 ---
 
-# Equal Quality Principle
+# Topic Consistency
 
-Seluruh opsi harus memiliki kualitas penulisan yang setara.
+Semua opsi wajib membahas masalah yang sama.
 
 Generator tidak boleh membuat:
 
-- satu opsi sangat rinci;
-- satu opsi sangat pendek;
-- satu opsi jauh lebih profesional.
+Stem
 
-Perbedaan kualitas redaksi dapat menjadi petunjuk jawaban.
+Pembagian bantuan.
 
----
+Tetapi opsi berubah menjadi:
 
-# Attractive Distractor
+• hukuman
 
-Distraktor harus cukup kuat sehingga masih mungkin dipilih oleh peserta yang belum memahami kompetensi secara utuh.
+• pidana
 
-Distraktor tidak boleh:
+• politik
 
-- jelas salah;
-- tidak relevan;
-- bertentangan langsung dengan nilai kebangsaan;
-- terasa dibuat hanya untuk memenuhi lima pilihan.
+• administrasi
+
+yang tidak berkaitan dengan konflik.
 
 ---
 
-# Competitive Strength
+# Dominant Value Check
 
-Generator harus membayangkan setiap opsi memiliki tingkat kekuatan.
+Jawaban benar harus menjadi opsi yang paling mencerminkan nilai dominan.
 
-Contoh konseptual:
+Distraktor boleh mencerminkan nilai lain.
 
-Opsi A
-
-91
-
-Opsi B
-
-92
-
-Opsi C
-
-95
-
-Opsi D
-
-90
-
-Opsi E
-
-89
-
-Jawaban benar unggul tipis,
-
-bukan unggul jauh.
-
-Semakin kecil selisih kualitas antar opsi,
-
-semakin baik kualitas soal.
+Namun nilai tersebut tidak boleh lebih dominan dibanding jawaban benar.
 
 ---
 
-# Wrong for the Right Reason
+# Elimination Check
 
-Distraktor sebaiknya tetap merupakan tindakan yang baik.
+Generator wajib menghapus opsi apabila:
 
-Namun,
+• terlalu ekstrem;
 
-distraktor kalah karena:
+• bertentangan dengan hukum;
 
-- bukan kompetensi utama;
-- kurang lengkap;
-- kurang prioritas;
-- kurang sesuai dengan nilai dominan.
+• bertentangan dengan fakta soal;
 
-Distraktor tidak kalah karena menjadi tindakan buruk.
+• tidak realistis;
 
----
-
-# Dominant Value Consistency
-
-Seluruh opsi boleh mengandung nilai kebangsaan.
-
-Namun hanya satu opsi yang paling sesuai dengan:
-
-- kompetensi utama;
-- nilai dominan;
-- tujuan soal.
-
-Generator tidak boleh membuat dua opsi dengan kualitas yang benar-benar setara.
-
-Harus tetap terdapat satu jawaban terbaik.
+• mudah dieliminasi hanya dengan logika umum.
 
 ---
 
-# Psychological Pull
+# Balance Check
 
-Setiap opsi sebaiknya mempunyai daya tarik psikologis.
+Kelima opsi harus memiliki tingkat kelayakan yang relatif seimbang.
 
-Contoh:
+Tidak boleh terdapat:
 
-Satu opsi menarik bagi peserta yang terlalu idealis.
+• satu opsi yang sangat buruk;
 
-Satu opsi menarik bagi peserta yang terlalu formal.
+• satu opsi yang terlalu sempurna;
 
-Satu opsi menarik bagi peserta yang terlalu pragmatis.
-
-Satu opsi menarik bagi peserta yang hanya memahami konsep secara umum.
-
-Satu opsi merupakan pilihan paling tepat bagi peserta yang benar-benar memahami kompetensi.
-
-Dengan demikian,
-
-kesalahan peserta menjadi hasil proses berpikir,
-
-bukan akibat distraktor yang buruk.
+• satu opsi yang tidak mungkin dipilih.
 
 ---
 
-# No Dummy Option
+# Single Best Answer
 
-Generator tidak boleh membuat opsi pelengkap.
+Setelah seluruh opsi selesai,
 
-Apabila satu opsi dihapus,
+generator wajib melakukan evaluasi:
 
-lalu kualitas soal tidak berubah,
+Apakah terdapat lebih dari satu opsi yang sama kuat?
 
-berarti opsi tersebut merupakan dummy option.
+Jika YA,
 
-Dummy option wajib dihilangkan.
-
----
-
-# Natural Alternatives
-
-Seluruh opsi harus terasa sebagai alternatif yang mungkin benar-benar dilakukan dalam situasi tersebut.
-
-Generator tidak boleh membuat opsi yang:
-
-- terlalu ekstrem;
-- tidak realistis;
-- di luar kewenangan tokoh pada soal;
-- tidak sesuai konteks.
+generator harus memperbaiki opsi tersebut sampai hanya tersisa satu opsi yang paling tepat.
 
 ---
 
-# Similar Plausibility
+# Comparative Validation
 
-Seluruh opsi harus memiliki tingkat kewajaran yang relatif setara.
+Generator wajib melakukan perbandingan antar opsi.
 
-Peserta tidak boleh dapat mengeliminasi opsi hanya karena:
+Bukan membandingkan opsi dengan teori.
 
-- terlalu ekstrem;
-- terlalu sederhana;
-- terlalu tidak masuk akal.
+Tetapi membandingkan:
 
----
+A vs B
 
-# Language Calibration
+A vs C
 
-Perbedaan panjang kalimat tidak boleh menjadi petunjuk jawaban.
+A vs D
 
-Generator menjaga agar:
+A vs E
 
-- panjang opsi relatif seimbang;
-- gaya bahasa konsisten;
-- tingkat formalitas seragam.
+hingga ditemukan satu opsi yang memiliki kualitas paling tinggi.
 
 ---
 
-# Common CAT Pattern
+# Final Checklist
 
-Karakter opsi pada CAT SKD BKN umumnya memiliki pola berikut.
+Sebelum soal selesai, pastikan:
 
-- seluruh opsi terdengar benar;
-- seluruh opsi memiliki nilai positif;
-- perbedaan terletak pada prioritas tindakan;
-- jawaban dipilih karena paling mencerminkan kompetensi yang diukur.
+✓ seluruh opsi masih relevan terhadap stem;
 
-Generator wajib meniru pola tersebut.
+✓ seluruh opsi masih berada pada topik yang sama;
 
----
+✓ seluruh opsi masih mengukur kompetensi yang sama;
 
-# Larangan
+✓ tidak ada opsi yang terlalu lemah;
 
-Generator tidak boleh:
+✓ tidak ada opsi yang terlalu ekstrem;
 
-- membuat satu opsi jelas paling baik;
-- membuat satu opsi sangat buruk;
-- membuat jawaban benar jauh lebih panjang;
-- menggunakan kata-kata absolut sebagai petunjuk jawaban;
-- membuat distraktor tidak relevan;
-- membuat dua jawaban yang sama kuat sehingga menimbulkan ambiguitas.
+✓ hanya terdapat satu jawaban paling tepat;
+
+✓ peserta harus melakukan komparasi sebelum menentukan jawaban.
 
 ---
 
-# Target
+# Output
 
-Peserta harus merasa:
+Setelah lolos Option Calibration,
 
-"Semua pilihan tampak benar."
+opsi dinyatakan siap memasuki:
 
-Namun,
+• Difficulty Engine;
 
-setelah melakukan analisis komparatif,
+• Comparison Engine;
 
-hanya satu pilihan yang benar-benar paling tepat sesuai kompetensi yang sedang diukur.
-
-Inilah karakter utama pilihan jawaban pada soal TWK SKD CAT BKN dan menjadi standar Option Calibration GerbangASN.
+• Review Engine.
