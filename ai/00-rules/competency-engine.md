@@ -66,3 +66,28 @@ Jangan membuat soal yang hanya menguji:
 tanpa menghubungkannya dengan kompetensi TWK.
 
 Kompetensi TWK harus selalu menjadi pusat asesmen.
+
+## Resolusi Kompetensi
+
+Apabila satu skenario berpotensi mengukur lebih dari satu nilai utama pada topik yang sama, generator wajib melakukan Boundary Analysis menggunakan **value-boundary.md** pada topik tersebut.
+
+Kompetensi akhir ditentukan berdasarkan nilai dominan yang sedang diukur, bukan berdasarkan tema permukaan atau kata kunci.
+
+Contoh:
+
+Tema:
+Agama
+
+↓
+
+Belum tentu mengukur sila pertama.
+
+Generator harus menentukan apakah fokus utama adalah:
+
+- hubungan manusia dengan Tuhan;
+- penghormatan terhadap sesama;
+- persatuan;
+- proses musyawarah;
+- keadilan hasil.
+
+Kompetensi akhir ditetapkan setelah Boundary Analysis selesai.
