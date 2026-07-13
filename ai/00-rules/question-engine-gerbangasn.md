@@ -1,158 +1,462 @@
 # Question Engine GerbangASN
 
-Versi : 2.0
-
-Status : Active
+Version : 2.0
 
 ---
 
-Question Engine GerbangASN merupakan pusat orkestrasi seluruh engine penyusun soal.
+# Tujuan
 
-Seluruh engine harus dijalankan secara berurutan.
+Question Engine GerbangASN merupakan master orchestrator yang mengatur seluruh proses penyusunan soal GerbangASN.
 
-Tidak diperbolehkan melompati engine.
+Question Engine bukan kumpulan markdown yang berdiri sendiri.
 
----
+Question Engine adalah sebuah pipeline yang mengintegrasikan seluruh engine sehingga setiap soal dihasilkan melalui proses berpikir yang sistematis, konsisten, dan sesuai karakteristik CAT SKD BKN.
 
-## Execution Flow
+Generator wajib menggunakan seluruh engine sebagai satu kesatuan.
 
-Question Engine GerbangASN
-
-↓
-
-GerbangASN Rules
-
-↓
-
-Topic Identity Engine
-
-↓
-
-Competency Engine
-
-↓
-
-Assessment Pattern
-
-↓
-
-Value Boundary (jika tersedia)
-
-↓
-
-Knowledge
-
-↓
-
-Scenario Engine
-
-↓
-
-Conflict Engine
-
-↓
-
-Stem Engine
-
-↓
-
-Candidate Option Generation
-
-↓
-
-Option Hierarchy Engine
-
-↓
-
-Option Psychology Engine
-
-↓
-
-Option Naturalness Engine
-
-↓
-
-Option Calibration
-
-↓
-
-Difficulty Engine
-
-↓
-
-Comparison Engine
-
-↓
-
-Answer Distribution
-
-↓
-
-Review Engine
+Generator tidak boleh memilih sebagian engine atau mengubah urutan proses.
 
 ---
 
-## Filosofi
+# Filosofi
 
-Question Engine tidak bertujuan membuat soal.
+Question Engine dibangun berdasarkan prinsip berikut.
 
-Question Engine bertujuan menghasilkan lima opsi yang sama-sama layak dipilih, namun hanya satu yang paling tepat.
-
-Karakter soal CAT SKD BKN berasal dari kualitas opsi, bukan dari panjang skenario.
+- Mengukur kompetensi, bukan menguji hafalan.
+- Menguji kemampuan peserta menentukan nilai yang paling dominan.
+- Menghasilkan distraktor yang sama-sama masuk akal.
+- Menghindari jawaban yang dapat ditebak melalui pola penulisan.
+- Menyerupai karakter soal CAT SKD BKN, bukan soal latihan sekolah.
+- Seluruh soal harus melalui reasoning process sebelum ditulis.
 
 ---
 
-## Candidate Option Generation
+# Arsitektur Engine
 
-Sebelum melakukan kalibrasi,
+Question Engine terdiri dari empat layer.
 
-generator wajib menghasilkan lima kandidat opsi.
+## Layer 1
 
-Kelima opsi tersebut belum dianggap final.
+### Knowledge Layer
 
-Setelah itu setiap opsi harus melalui:
+Engine pada layer ini menentukan apa yang akan diukur.
 
+Engine:
+
+- Topic Identity Engine
+- Competency Engine
+- Assessment Pattern
+- Knowledge
+- References
+
+Output:
+
+- identitas topik
+- kompetensi utama
+- indikator kompetensi
+- ruang lingkup materi
+- batas materi
+
+Generator belum boleh membuat skenario.
+
+---
+
+## Layer 2
+
+### Reasoning Layer
+
+Engine pada layer ini membangun logika soal.
+
+Engine:
+
+- Scenario Engine
+- Conflict Engine
+- Value Boundary
+
+Output:
+
+- skenario
+- konflik utama
+- nilai dominan
+- boundary analysis
+
+Generator belum boleh membuat pilihan jawaban.
+
+---
+
+## Layer 3
+
+### Construction Layer
+
+Engine pada layer ini membangun soal.
+
+Engine:
+
+- Stem Engine
+- CAT Writing Style Engine
 - Option Hierarchy
 - Option Psychology
 - Option Naturalness
 - Option Calibration
 
-Baru menjadi opsi final.
+Output:
+
+- stem final
+- lima opsi
+- satu jawaban terbaik
 
 ---
 
-## Prioritas
+## Layer 4
 
-1. Kompetensi
+### Evaluation Layer
 
-2. Nilai dominan
+Engine pada layer ini melakukan quality assurance.
 
-3. Scenario
+Engine:
 
-4. Conflict
+- Difficulty Engine
+- Comparison Engine
+- Review Engine
+- Answer Distribution
 
-5. Stem
+Output:
 
-6. Candidate Option
-
-7. Hierarchy
-
-8. Psychology
-
-9. Naturalness
-
-10. Calibration
-
-11. Difficulty
-
-12. Comparison
-
-13. Review
+- tingkat kompleksitas
+- pembahasan komparatif
+- validasi kualitas soal
+- distribusi jawaban
 
 ---
 
-Question Engine merupakan aturan tertinggi.
+# Engine Flow
 
-Jika terjadi konflik antar engine,
+Generator WAJIB mengikuti Question Engine Flow.
 
-Question Engine menjadi acuan utama.
+Urutan pengerjaan diatur pada file:
+
+question-engine-flow.md
+
+Generator tidak boleh mengubah urutan tersebut.
+
+---
+
+# Mandatory Engine
+
+Seluruh engine berikut wajib dijalankan.
+
+- Topic Identity Engine
+- Competency Engine
+- Assessment Pattern
+- Knowledge
+- Scenario Engine
+- Conflict Engine
+- Value Boundary
+- Stem Engine
+- CAT Writing Style Engine
+- Option Hierarchy
+- Option Psychology
+- Option Naturalness
+- Option Calibration
+- Difficulty Engine
+- Comparison Engine
+- Review Engine
+- Answer Distribution
+
+Tidak ada engine yang boleh dilewati.
+
+---
+
+# Internal Thinking Process
+
+Generator dilarang langsung membuat soal.
+
+Generator wajib berpikir menggunakan tahapan berikut.
+
+TOPIC
+
+↓
+
+TOPIC IDENTITY
+
+↓
+
+COMPETENCY
+
+↓
+
+ASSESSMENT PATTERN
+
+↓
+
+KNOWLEDGE
+
+↓
+
+SCENARIO
+
+↓
+
+CONFLICT
+
+↓
+
+VALUE BOUNDARY
+
+↓
+
+STEM
+
+↓
+
+CAT WRITING STYLE
+
+↓
+
+OPTION HIERARCHY
+
+↓
+
+OPTION PSYCHOLOGY
+
+↓
+
+OPTION NATURALNESS
+
+↓
+
+OPTION CALIBRATION
+
+↓
+
+DIFFICULTY
+
+↓
+
+COMPARISON
+
+↓
+
+REVIEW
+
+↓
+
+ANSWER DISTRIBUTION
+
+↓
+
+FINAL OUTPUT
+
+---
+
+# Priority Engine
+
+## Critical Priority
+
+Engine berikut memiliki prioritas tertinggi.
+
+- Topic Identity Engine
+- Value Boundary
+- CAT Writing Style Engine
+- Option Hierarchy
+- Option Psychology
+- Option Naturalness
+- Option Calibration
+- Comparison Engine
+- Review Engine
+
+Kesalahan pada engine ini akan menghasilkan soal yang tidak menyerupai CAT SKD BKN.
+
+---
+
+## High Priority
+
+- Competency Engine
+- Assessment Pattern
+- Scenario Engine
+- Conflict Engine
+
+---
+
+## Medium Priority
+
+- Difficulty Engine
+- Answer Distribution
+
+---
+
+# Anti Shortcut Rule
+
+Generator dilarang:
+
+- membuat soal sebelum memahami kompetensi yang diukur;
+- menentukan jawaban benar sebelum seluruh opsi selesai dibuat;
+- membuat stem setelah menentukan jawaban;
+- menentukan nilai dominan berdasarkan kata kunci permukaan;
+- membuat opsi yang jelas salah;
+- membuat satu opsi jauh lebih panjang daripada opsi lain;
+- membuat satu opsi jauh lebih spesifik daripada opsi lain;
+- membuat satu opsi jauh lebih konkret daripada opsi lain;
+- menggunakan kata absolut (selalu, pasti, seluruh, hanya) sebagai penanda opsi salah kecuali memang merupakan inti materi;
+- menggunakan pola bahasa yang membuat jawaban mudah dikenali;
+- menggunakan distraktor yang tidak memiliki logika;
+- menggunakan opsi yang berbeda hanya karena sinonim;
+- mengulang struktur kalimat yang sama pada seluruh opsi;
+- membuat jawaban benar menjadi paling lengkap;
+- membuat jawaban benar menjadi paling sopan;
+- membuat jawaban benar menjadi paling ideal;
+- membuat jawaban benar menjadi paling moderat tanpa alasan kompetensi.
+
+---
+
+# Prinsip Penentuan Nilai Dominan
+
+Generator wajib menentukan nilai dominan berdasarkan inti konflik.
+
+Bukan berdasarkan:
+
+- kata kunci;
+- tema permukaan;
+- objek pada soal;
+- profesi tokoh;
+- lokasi kejadian.
+
+Apabila satu soal memuat lebih dari satu nilai Pancasila,
+
+Generator wajib menggunakan Value Boundary untuk menentukan kompetensi yang benar-benar sedang diuji.
+
+---
+
+# Prinsip Penyusunan Distraktor
+
+Distraktor bukan jawaban salah.
+
+Distraktor adalah alternatif yang:
+
+- logis;
+- realistis;
+- masih sesuai nilai Pancasila;
+- tetapi tidak menjadi kompetensi utama yang sedang diukur.
+
+Setiap distraktor harus memiliki alasan mengapa peserta mungkin memilihnya.
+
+---
+
+# Prinsip Gaya Penulisan
+
+Generator wajib mengikuti CAT Writing Style Engine.
+
+Stem harus:
+
+- natural;
+- kontekstual;
+- efisien;
+- tidak berbunga-bunga;
+- tidak menjelaskan terlalu banyak.
+
+Pilihan jawaban harus:
+
+- panjang relatif seimbang;
+- struktur relatif seimbang;
+- tingkat formalitas relatif sama;
+- sama-sama terdengar benar;
+- tidak memiliki penanda linguistik jawaban benar.
+
+---
+
+# Validasi Internal
+
+Sebelum soal ditampilkan,
+
+Generator wajib memastikan seluruh checklist berikut terpenuhi.
+
+## Knowledge
+
+✓ Topik telah dipahami.
+
+✓ Kompetensi telah ditentukan.
+
+✓ Assessment Pattern sesuai.
+
+---
+
+## Reasoning
+
+✓ Konflik utama hanya satu.
+
+✓ Nilai dominan telah dipilih.
+
+✓ Boundary telah dianalisis.
+
+---
+
+## Construction
+
+✓ Stem selesai.
+
+✓ Lima opsi selesai.
+
+✓ Hierarchy selesai.
+
+✓ Psychology selesai.
+
+✓ Naturalness selesai.
+
+✓ Calibration selesai.
+
+---
+
+## Evaluation
+
+✓ Tingkat kompleksitas sesuai.
+
+✓ Comparison selesai.
+
+✓ Review selesai.
+
+✓ CAT Writing Style sesuai.
+
+✓ Distribusi jawaban sesuai.
+
+Checklist ini hanya digunakan sebagai validasi internal.
+
+Generator tidak boleh menampilkannya kepada pengguna.
+
+---
+
+# Final Output
+
+Setiap soal minimal memuat:
+
+- stem;
+- lima opsi;
+- satu jawaban terbaik;
+- pembahasan komparatif;
+- kompetensi utama;
+- nilai dominan;
+- tingkat kompleksitas.
+
+Setelah seluruh soal selesai,
+
+Generator wajib memberikan:
+
+- ringkasan kompetensi;
+- ringkasan nilai dominan;
+- distribusi jawaban;
+- validasi akhir.
+
+---
+
+# Final Principle
+
+Question Engine GerbangASN adalah sistem berpikir.
+
+Generator tidak ditugaskan mengingat materi.
+
+Generator ditugaskan melakukan reasoning menggunakan seluruh engine.
+
+Semakin konsisten generator mengikuti pipeline, semakin tinggi kualitas soal yang dihasilkan.
+
+Tidak ada engine yang berdiri sendiri.
+
+Seluruh engine bekerja sebagai satu kesatuan untuk menghasilkan soal yang menyerupai karakter CAT SKD BKN.
