@@ -1,356 +1,158 @@
 # Question Engine GerbangASN
 
-Versi : 1.2
+Versi : 2.0
 
 Status : Active
 
-Engine Type : TWK Question Generation Engine
+---
+
+Question Engine GerbangASN merupakan pusat orkestrasi seluruh engine penyusun soal.
+
+Seluruh engine harus dijalankan secara berurutan.
+
+Tidak diperbolehkan melompati engine.
 
 ---
 
-# Tujuan
+## Execution Flow
 
-Question Engine GerbangASN merupakan sistem modular untuk menghasilkan soal Tes Wawasan Kebangsaan (TWK) berkualitas tinggi yang menyerupai karakter soal SKD CAT BKN terbaru.
+Question Engine GerbangASN
 
-Engine ini memastikan seluruh soal diproduksi secara:
+↓
 
-- original;
-- konsisten;
-- terstandarisasi;
-- berbasis kompetensi;
-- sesuai karakter asesmen SKD BKN.
+GerbangASN Rules
 
-Seluruh markdown di dalam Project merupakan satu sistem yang saling terhubung.
+↓
 
-Generator wajib memahami keseluruhan sistem sebelum menghasilkan soal.
+Topic Identity Engine
+
+↓
+
+Competency Engine
+
+↓
+
+Assessment Pattern
+
+↓
+
+Value Boundary (jika tersedia)
+
+↓
+
+Knowledge
+
+↓
+
+Scenario Engine
+
+↓
+
+Conflict Engine
+
+↓
+
+Stem Engine
+
+↓
+
+Candidate Option Generation
+
+↓
+
+Option Hierarchy Engine
+
+↓
+
+Option Psychology Engine
+
+↓
+
+Option Naturalness Engine
+
+↓
+
+Option Calibration
+
+↓
+
+Difficulty Engine
+
+↓
+
+Comparison Engine
+
+↓
+
+Answer Distribution
+
+↓
+
+Review Engine
 
 ---
 
-# Filosofi Engine
+## Filosofi
 
-Question Engine GerbangASN dibangun berdasarkan prinsip berikut.
+Question Engine tidak bertujuan membuat soal.
 
-- Kompetensi lebih penting daripada hafalan.
-- Kesulitan berasal dari kualitas analisis.
-- Seluruh opsi harus layak dipilih.
-- Jawaban benar dipilih karena paling sesuai dengan kompetensi.
-- Soal harus terasa natural.
-- Soal harus menyerupai karakter SKD CAT BKN.
-- Seluruh soal harus original.
+Question Engine bertujuan menghasilkan lima opsi yang sama-sama layak dipilih, namun hanya satu yang paling tepat.
+
+Karakter soal CAT SKD BKN berasal dari kualitas opsi, bukan dari panjang skenario.
 
 ---
 
-# Arsitektur Engine
+## Candidate Option Generation
 
-Question Engine terdiri atas lima layer.
+Sebelum melakukan kalibrasi,
 
----
+generator wajib menghasilkan lima kandidat opsi.
 
-# Layer 1 — Core Engine
+Kelima opsi tersebut belum dianggap final.
 
-Fungsi
+Setelah itu setiap opsi harus melalui:
 
-Menjadi fondasi seluruh Question Engine.
+- Option Hierarchy
+- Option Psychology
+- Option Naturalness
+- Option Calibration
 
-Modul
-
-- gerbangasn-rules.md
-
----
-
-# Layer 2 — Assessment Engine
-
-Fungsi
-
-Menentukan identitas asesmen.
-
-Assessment Engine memastikan bahwa setiap soal:
-
-- tetap merupakan soal TWK;
-- tetap berada pada kompetensi utama topik;
-- mengukur kompetensi yang tepat.
-
-Modul
-
-- competency-engine.md
-- assessment-psychology.md
-- topic-identity-engine.md
-
-Output
-
-Generator memahami:
-
-- topik;
-- kompetensi;
-- identitas soal.
+Baru menjadi opsi final.
 
 ---
 
-# Layer 3 — Question Construction Engine
+## Prioritas
 
-Fungsi
+1. Kompetensi
 
-Membangun struktur soal.
+2. Nilai dominan
 
-Modul
+3. Scenario
 
-- stem-engine.md
-- scenario-engine.md
-- conflict-engine.md
-- dominant-value-engine.md
-- option-design-rules.md
-- option-calibration.md
-- comparison-engine.md
-- difficulty-engine.md
+4. Conflict
 
-Output
+5. Stem
 
-Generator menghasilkan:
+6. Candidate Option
 
-- scenario;
-- konflik;
-- stem;
-- lima opsi;
-- jawaban terbaik;
-- tingkat kesulitan.
+7. Hierarchy
 
----
+8. Psychology
 
-# Layer 4 — Knowledge Engine
+9. Naturalness
 
-Fungsi
+10. Calibration
 
-Menyediakan materi dan pola asesmen.
+11. Difficulty
 
-Modul
+12. Comparison
 
-- knowledge.md
-- assessment-focus.md
-- assessment-pattern.md
-- decision-pattern.md
-- fact-bank.md
-- pattern-mining.md
-- references.md
-
-Catatan
-
-PDF hanya menjadi referensi pembelajaran.
-
-Generator dilarang menyalin isi PDF menjadi soal.
+13. Review
 
 ---
 
-# Layer 5 — Validation Engine
+Question Engine merupakan aturan tertinggi.
 
-Fungsi
+Jika terjadi konflik antar engine,
 
-Melakukan evaluasi kualitas soal sebelum ditampilkan.
-
-Modul
-
-- answer-distribution.md
-- review-engine.md
-
-Output
-
-Generator memastikan soal memenuhi seluruh standar GerbangASN.
-
----
-
-# Workflow Question Generation
-
-Generator wajib mengikuti urutan berikut.
-
-## Tahap 1
-
-Identifikasi topik.
-
-↓
-
-## Tahap 2
-
-Aktifkan Topic Identity.
-
-↓
-
-## Tahap 3
-
-Pelajari seluruh Knowledge Engine.
-
-↓
-
-## Tahap 4
-
-Tentukan kompetensi yang akan diukur.
-
-↓
-
-## Tahap 5
-
-Bangun scenario.
-
-↓
-
-## Tahap 6
-
-Bangun konflik.
-
-↓
-
-## Tahap 7
-
-Susun stem.
-
-↓
-
-## Tahap 8
-
-Bangun lima opsi jawaban.
-
-↓
-
-## Tahap 9
-
-Gunakan Dominant Value Engine untuk menentukan jawaban terbaik.
-
-↓
-
-## Tahap 10
-
-Kalibrasi tingkat kesulitan.
-
-↓
-
-## Tahap 11
-
-Lakukan Comparison Engine.
-
-↓
-
-## Tahap 12
-
-Lakukan Validation Engine.
-
-↓
-
-## Tahap 13
-
-Tampilkan soal.
-
-Generator tidak boleh melewati salah satu tahap di atas.
-
----
-
-# Prioritas Engine
-
-Apabila terdapat konflik antar aturan,
-
-gunakan prioritas berikut.
-
-1. Core Engine
-2. Assessment Engine
-3. Question Construction Engine
-4. Knowledge Engine
-5. Validation Engine
-6. Materi Referensi
-
----
-
-# Prinsip Penyusunan Soal
-
-Setiap soal harus memenuhi prinsip berikut.
-
-- Mengukur satu kompetensi utama.
-- Memiliki satu konflik utama.
-- Memiliki satu nilai dominan.
-- Memiliki konteks realistis.
-- Memiliki lima opsi yang layak dipilih.
-- Distraktor tidak boleh jelas salah.
-- Tidak memberikan petunjuk jawaban.
-- Tidak menjadikan panjang kalimat sebagai indikator jawaban benar.
-- Jawaban benar dipilih karena paling sesuai dengan kompetensi.
-- Pembahasan bersifat komparatif.
-
----
-
-# Standar Output
-
-Setiap soal minimal memuat:
-
-1. Soal.
-2. Pilihan jawaban A–E.
-3. Jawaban benar.
-4. Pembahasan komparatif.
-5. Kompetensi yang diukur.
-6. Tingkat kesulitan.
-
----
-
-# Siklus Berpikir Generator
-
-Generator harus berpikir dengan urutan berikut.
-
-TOPIK
-
-↓
-
-IDENTITAS
-
-↓
-
-KOMPETENSI
-
-↓
-
-KNOWLEDGE
-
-↓
-
-SCENARIO
-
-↓
-
-KONFLIK
-
-↓
-
-STEM
-
-↓
-
-OPSI
-
-↓
-
-DOMINANT VALUE
-
-↓
-
-DIFFICULTY
-
-↓
-
-COMPARISON
-
-↓
-
-VALIDATION
-
-↓
-
-OUTPUT
-
-Generator tidak boleh langsung menghasilkan soal tanpa mengikuti siklus berpikir tersebut.
-
----
-
-# Target Akhir
-
-Question Engine GerbangASN bertujuan menghasilkan soal yang:
-
-- original;
-- konsisten;
-- berkualitas premium;
-- sulit dibedakan dari soal SKD CAT BKN;
-- mampu mengukur kompetensi secara tepat;
-- layak digunakan sebagai standar produksi bank soal GerbangASN.
+Question Engine menjadi acuan utama.
