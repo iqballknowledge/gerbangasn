@@ -1,5 +1,15 @@
 # Question Engine GerbangASN
 
+Versi : 1.0
+
+Status : Active
+
+Engine Type : TWK Question Generation Engine
+
+Tujuan :
+
+Menghasilkan soal TWK berkualitas tinggi yang konsisten, terstandarisasi, dan menyerupai karakter soal SKD CAT BKN terbaru melalui sistem modular yang terdiri atas Core Engine, Question Construction Engine, Assessment Engine, Knowledge Engine, dan Validation Engine.
+
 ## Tujuan
 
 Question Engine GerbangASN adalah sistem terpadu yang digunakan untuk menghasilkan soal TWK berkualitas setara SKD CAT BKN.
