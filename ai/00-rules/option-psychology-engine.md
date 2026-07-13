@@ -1,103 +1,141 @@
 # Option Psychology Engine
 
-Versi : 1.0
-
-Status : Active
+Versi : 2.2
 
 ---
 
 # Tujuan
 
-Engine ini mengatur psikologi peserta saat membaca opsi.
+Engine ini bertugas membuat setiap distraktor tampak benar menurut cara berpikir peserta.
 
-Distraktor harus menarik.
+Distraktor tidak dibuat secara acak.
 
-Bukan salah.
+Distraktor harus berasal dari pola berpikir manusia yang paling sering muncul ketika menghadapi persoalan implementasi nilai kebangsaan.
 
 ---
 
 # Filosofi
 
-Peserta gagal bukan karena tidak tahu.
+Peserta CAT BKN hampir tidak pernah memilih jawaban yang jelas salah.
 
-Peserta gagal karena memilih opsi yang tampak paling benar.
+Mereka memilih jawaban yang "terlihat benar".
+
+Karena itu distraktor harus dibangun dari nilai yang benar tetapi bukan nilai yang paling dominan.
 
 ---
 
 # Psychological Trap
 
-Setiap distraktor wajib memiliki alasan psikologis.
+Generator wajib menggunakan minimal satu pola berikut.
 
-Contoh
+## 1. Equality Bias
 
-Distraktor 1
+Peserta menganggap adil berarti sama rata.
 
-Terlalu berempati.
+contoh
 
-Distraktor 2
+membagi rata bantuan
 
-Terlalu demokratis.
-
-Distraktor 3
-
-Terlalu administratif.
-
-Distraktor 4
-
-Terlalu menjaga persatuan.
-
-Jawaban
-
-Paling sesuai kompetensi.
+padahal soal menguji proporsionalitas.
 
 ---
 
-# Miskonsepsi
+## 2. Majority Bias
 
-Distraktor boleh berasal dari miskonsepsi umum.
+Peserta menganggap keputusan mayoritas selalu paling benar.
 
-Misalnya
+contoh
 
-keadilan = sama rata
+voting
 
-demokrasi = voting
-
-toleransi = menghilangkan identitas
-
-persatuan = menyeragamkan
+padahal yang diuji musyawarah.
 
 ---
 
-# Target
+## 3. Harmony Bias
 
-Peserta pemula,
+Peserta memilih jawaban yang menjaga kerukunan.
 
-peserta sedang,
-
-dan peserta mahir,
-
-memiliki kecenderungan memilih opsi yang berbeda.
+padahal konflik utama berada pada keadilan.
 
 ---
 
-# Larangan
+## 4. Authority Bias
 
-Jangan membuat distraktor yang:
+Peserta percaya pemimpin paling berhak menentukan.
 
-- jelas salah
-
-- melanggar hukum
-
-- tidak relevan
-
-- mudah dieliminasi.
+padahal soal menguji partisipasi.
 
 ---
 
-# Validasi
+## 5. Empathy Bias
 
-✓ setiap distraktor memiliki daya tarik
+Peserta terlalu fokus pada belas kasihan.
 
-✓ setiap distraktor mewakili miskonsepsi tertentu
+padahal soal menguji keadilan.
 
-✓ peserta harus berpikir sebelum mengeliminasi
+---
+
+## 6. Efficiency Bias
+
+Peserta memilih solusi tercepat.
+
+padahal soal menguji proses.
+
+---
+
+## 7. Procedure Bias
+
+Peserta memilih jawaban yang paling sesuai prosedur.
+
+padahal prosedur belum tentu menjadi nilai utama.
+
+---
+
+## 8. Religious Bias
+
+Peserta menganggap semua persoalan agama otomatis sila pertama.
+
+Padahal bisa jadi sila kedua, ketiga, atau kelima.
+
+---
+
+## 9. Nationalism Bias
+
+Peserta menganggap simbol negara selalu berarti nasionalisme.
+
+Padahal yang diuji bisa jadi persatuan.
+
+---
+
+## 10. Compromise Bias
+
+Peserta menganggap jalan tengah selalu terbaik.
+
+Padahal nilai dominannya bisa berbeda.
+
+---
+
+# Rule
+
+Setiap soal minimal memiliki tiga distraktor yang berasal dari psychological bias berbeda.
+
+Tidak boleh tiga distraktor berasal dari pola pikir yang sama.
+
+---
+
+# Validation
+
+Setelah opsi selesai dibuat,
+
+generator wajib menjawab:
+
+"Jika saya menjadi peserta,
+
+mengapa saya mungkin memilih A?"
+
+Hal yang sama dilakukan terhadap B,C,D,E.
+
+Jika alasannya lemah,
+
+distraktor harus diperbaiki.
