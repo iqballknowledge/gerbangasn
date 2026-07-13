@@ -1,90 +1,243 @@
-# Stem Pattern
+# Assessment Pattern
 
-Mayoritas soal menggunakan:
+Versi : 2.0
 
-- studi kasus singkat;
-- konflik sederhana;
-- satu nilai dominan;
-- konteks realistis.
+Status : Active
 
----
-
-# Context Pattern
-
-Konteks yang sering muncul:
-
-- sekolah
-- ASN
-- masyarakat
-- keluarga
-- organisasi
+Topik : Implementasi Pancasila
 
 ---
 
-# Question Pattern
+# Tujuan
 
-Mayoritas pertanyaan menggunakan:
+Assessment Pattern bertugas menentukan pola kompetensi yang akan diukur pada setiap soal Implementasi Pancasila.
 
-"tindakan paling tepat"
-
-"perilaku yang paling sesuai"
-
-"sikap yang paling mencerminkan"
+Engine ini memastikan bahwa setiap soal hanya mengukur satu kompetensi utama, meskipun skenario dapat memuat lebih dari satu nilai Pancasila.
 
 ---
 
-# Conflict Pattern
+# Filosofi
 
-Konflik biasanya berupa:
+Soal Implementasi Pancasila bukan bertujuan menguji hafalan lima sila.
 
-- perbedaan pendapat
-- keberagaman
-- pelayanan publik
-- pembagian hak
-- kerja sama
+Tujuan utama adalah mengukur kemampuan peserta mengidentifikasi nilai Pancasila yang paling tepat diterapkan dalam suatu situasi.
+
+Tema yang digunakan dapat berkaitan dengan beberapa sila sekaligus, tetapi generator wajib menentukan satu nilai dominan sebagai kompetensi utama.
 
 ---
 
-# Answer Pattern
+# Assessment Flow
 
-Jawaban benar biasanya:
+Generator wajib mengikuti urutan berikut.
 
-- paling sesuai nilai
-- tidak ekstrem
-- tidak hanya baik
-- paling komprehensif
-- berkelanjutan
+```
+Topik
+
+↓
+
+Identifikasi Kompetensi
+
+↓
+
+Boundary Analysis
+
+↓
+
+Nilai Dominan
+
+↓
+
+Skenario
+
+↓
+
+Konflik
+
+↓
+
+Pilihan Jawaban
+```
+
+Generator tidak boleh langsung membuat skenario sebelum menentukan kompetensi yang akan diukur.
 
 ---
 
-# Distractor Pattern
+# Kompetensi Utama
 
-Distraktor biasanya:
+Dalam setiap soal hanya boleh terdapat satu kompetensi utama.
 
-- tetap positif
-- mewakili sila lain
-- kurang lengkap
-- kurang prioritas
-- kurang sesuai konteks
+Kompetensi tersebut harus menjadi dasar seluruh proses penyusunan soal.
+
+Contoh:
+
+Topik:
+
+Implementasi Pancasila
+
+Kompetensi:
+
+Implementasi Sila Kedua
+
+↓
+
+Seluruh konflik, stem, dan opsi harus mengarah pada kompetensi tersebut.
 
 ---
 
-# Difficulty Pattern
+# Boundary Analysis
 
-Kesulitan berasal dari:
+Sebelum menentukan kompetensi akhir,
 
-- semua opsi baik;
-- perbedaan sangat tipis;
-- peserta harus menentukan nilai dominan.
+generator wajib melakukan Boundary Analysis menggunakan **value-boundary.md**.
+
+Tujuannya adalah membedakan apakah tema yang muncul benar-benar mengukur kompetensi yang dipilih.
+
+Generator tidak boleh menentukan kompetensi hanya berdasarkan tema atau kata kunci.
 
 ---
 
-# Pattern Constraints
+Contoh:
 
-Generator harus menghindari:
+Tema:
 
-- hafalan sila;
-- soal definisi;
-- opsi yang jelas salah;
-- jawaban heroik;
-- konflik yang terlalu rumit.
+Agama
+
+Belum tentu mengukur Sila Pertama.
+
+Generator harus menentukan terlebih dahulu apakah yang sedang diuji adalah:
+
+- hubungan manusia dengan Tuhan;
+- penghormatan terhadap sesama manusia;
+- persatuan;
+- proses musyawarah;
+- keadilan sosial.
+
+Kompetensi dipilih setelah Boundary Analysis selesai.
+
+---
+
+# Dominant Value
+
+Apabila satu skenario memiliki lebih dari satu nilai Pancasila,
+
+generator wajib menentukan nilai yang paling dominan.
+
+Nilai dominan adalah nilai yang paling menjadi fokus penilaian.
+
+Nilai lain boleh muncul sebagai distraktor.
+
+Namun tidak boleh menggeser kompetensi utama.
+
+---
+
+# Assessment Priority
+
+Generator wajib menentukan prioritas berikut.
+
+1.
+
+Kompetensi utama.
+
+2.
+
+Nilai dominan.
+
+3.
+
+Konflik utama.
+
+4.
+
+Stem.
+
+5.
+
+Pilihan jawaban.
+
+Generator tidak boleh membangun opsi sebelum kompetensi utama selesai ditentukan.
+
+---
+
+# Kompetensi Tidak Boleh Berubah
+
+Selama proses penyusunan soal,
+
+kompetensi utama tidak boleh berubah.
+
+Stem,
+
+konflik,
+
+opsi,
+
+maupun pembahasan,
+
+harus tetap mengarah pada kompetensi yang sama.
+
+---
+
+# Distraktor
+
+Distraktor diperbolehkan mewakili nilai Pancasila yang berbeda.
+
+Justru hal tersebut dianjurkan agar peserta mampu membedakan nilai dominan.
+
+Contoh:
+
+Topik:
+
+Agama
+
+Kompetensi:
+
+Sila Kedua
+
+Maka distraktor dapat berupa:
+
+- opsi yang lebih mencerminkan Sila Pertama;
+- opsi yang lebih mencerminkan Sila Ketiga;
+- opsi yang lebih mencerminkan Sila Kelima.
+
+Jawaban benar tetap merupakan opsi yang paling mencerminkan kompetensi utama.
+
+---
+
+# Hubungan dengan Value Boundary
+
+Assessment Pattern menentukan kompetensi.
+
+Value Boundary menentukan mengapa kompetensi tersebut dipilih.
+
+Assessment Pattern tidak menjelaskan batas antar sila.
+
+Seluruh analisis batas nilai dilakukan pada **value-boundary.md**.
+
+---
+
+# Validasi
+
+Sebelum soal dianggap selesai,
+
+generator wajib memastikan:
+
+✓ hanya terdapat satu kompetensi utama;
+
+✓ telah dilakukan Boundary Analysis;
+
+✓ nilai dominan telah ditentukan;
+
+✓ seluruh opsi masih relevan dengan topik;
+
+✓ jawaban benar dipilih karena paling mencerminkan kompetensi utama;
+
+✓ pembahasan menjelaskan mengapa jawaban benar lebih tepat dibanding opsi lain yang masih mencerminkan nilai Pancasila tetapi pada sila yang berbeda.
+
+---
+
+# Target
+
+Peserta tidak dapat menjawab soal hanya berdasarkan tema.
+
+Peserta harus mampu mengidentifikasi kompetensi utama dan nilai dominan yang sedang diukur.
+
+Dengan demikian soal memiliki karakter yang menyerupai TWK SKD CAT BKN, di mana satu tema dapat mengandung beberapa nilai Pancasila, tetapi hanya satu yang menjadi fokus penilaian.
